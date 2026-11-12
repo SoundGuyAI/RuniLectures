@@ -60,6 +60,13 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 .tick::before{content:"";flex:0 0 .8em;height:.8em;margin-top:.3em;border-radius:3px;background:var(--green)}
 /* dense slides scroll instead of clipping under fixed chrome */
 .slide.dense{justify-content:flex-start;overflow-y:auto;padding-top:11vh;padding-bottom:17vh}
+.slide.dense h2{font-size:clamp(1.5rem,3.2vw,2.3rem)}
+.slide.dense .lede{font-size:clamp(.88rem,1.7vw,1.08rem);max-width:70ch}
+.slide.dense .rcard{padding:clamp(9px,1.2vw,14px)}
+.slide.dense .rcard .q{font-size:clamp(.88rem,1.7vw,1.08rem)}
+.slide.dense .rcard .a{font-size:clamp(.76rem,1.5vw,.94rem);line-height:1.4}
+.slide.dense .ostep{font-size:clamp(.8rem,1.6vw,1rem);margin:.35em 0}
+.slide.dense .tick{font-size:clamp(.85rem,1.7vw,1.1rem);margin:.4em 0}
 /* reveal cards */
 .rcards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.6vw,20px);margin-top:1.6vh}
 .rcard{background:var(--panel);border:1px solid #22315a;border-radius:16px;padding:clamp(12px,1.8vw,22px);
@@ -185,7 +192,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
       <button type="button" class="rcard"><span class="q">"We will try."</span><span class="a">Goodwill, not a guaranteed yes. Ask open questions about practical obstacles instead of forcing a yes/no.<sup class="src">[2]</sup></span><span class="hint">Tap to reveal</span></button>
       <button type="button" class="rcard"><span class="q">The sideways head waggle</span><span class="a">Can signal understanding or friendly agreement - acknowledgment is not approval.<sup class="src">[2]</sup></span><span class="hint">Tap to reveal</span></button>
       <button type="button" class="rcard"><span class="q">A junior contact takes notes</span><span class="a">They often brief the absent senior decision-maker, and their impression carries your proposal internally. Never dismiss them.<sup class="src">[2]</sup></span><span class="hint">Tap to reveal</span></button>
-      <button type="button" class="rcard"><span class="q">Selling into Sri Lanka?</span><span class="a">trade.gov's guide: "In most cases, U.S. firms entering the Sri Lankan market require a local partner" - an agent or distributor is generally the most effective way to compete. You are pitching the distributor as much as the end user; do due diligence before signing.<sup class="src">[4]</sup></span><span class="hint">Tap to reveal</span></button>
+      <button type="button" class="rcard"><span class="q">Selling into Sri Lanka?</span><span class="a">trade.gov's guide: "In most cases, U.S. firms entering the Sri Lankan market require a local partner" - an agent or distributor is generally the most effective way to compete. Pitch the distributor as much as the end user; do due diligence.<sup class="src">[4]</sup></span><span class="hint">Tap to reveal</span></button>
     </div>
   </section>
 
