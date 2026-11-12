@@ -58,6 +58,8 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 .slide.active .tick{opacity:1;transform:none}
 .tick:nth-child(1){transition-delay:.2s}.tick:nth-child(2){transition-delay:.5s}.tick:nth-child(3){transition-delay:.8s}
 .tick::before{content:"";flex:0 0 .8em;height:.8em;margin-top:.3em;border-radius:3px;background:var(--green)}
+/* dense slides scroll instead of clipping under fixed chrome */
+.slide.dense{justify-content:flex-start;overflow-y:auto;padding-top:11vh;padding-bottom:17vh}
 /* AI session extras */
 .flow{display:flex;flex-direction:column;gap:.45em}
 .fchip{background:var(--panel);border:1px solid #22315a;border-radius:999px;padding:.45em 1.1em;font-weight:700;
@@ -162,7 +164,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
       <div>
         <div class="kicker">Instructor session</div>
         <h1>The AI<br><span style="color:var(--yel)">Workflow</span></h1>
-        <p class="lede">Everything in this kit - research, copy, design, code, repo - was produced by AI agents steered by a human. This session shows you exactly how, so you can run the same loop for your assignment.</p>
+        <p class="lede">Everything in this kit - research, copy, design, code, repo - was produced by AI agents steered by a human. This session shows the loop behind it - with the instructor's real prompts and the public repo trail - so you can run it for your own assignment.</p>
         <span class="badge">You are the editor-in-chief</span>
       </div>
       <div class="flow">
@@ -194,11 +196,11 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     <p class="lede" style="margin-top:3vh">Quality now depends on how well you <b>brief, check and correct</b>.</p>
   </section>
 
-  <section class="slide">
+  <section class="slide dense">
     <div class="kicker">02 - The toolbox</div>
     <h2>Five tools, five jobs - tap a card</h2>
     <div class="rcards">
-      <button type="button" class="rcard"><span class="q">Claude Code - coding agent</span><span class="a">Reads your codebase, edits files, runs commands, works with git: branches, commits, pull requests. This kit's design system and engine were built this way.<sup class="src">[1]</sup></span><span class="hint">Tap to reveal</span></button>
+      <button type="button" class="rcard"><span class="q">Claude Code - coding agent</span><span class="a">Reads a codebase, edits files, runs commands, works with git: branches, commits, pull requests. Reach for it when you want to delegate well-scoped coding tasks and review the diffs.<sup class="src">[1]</sup></span><span class="hint">Tap to reveal</span></button>
       <button type="button" class="rcard"><span class="q">Codex - coding agent</span><span class="a">OpenAI's coding partner for well-scoped engineering tasks - bugs, refactors, features - designed for multi-agent workflows where several tasks run in parallel.<sup class="src">[2]</sup></span><span class="hint">Tap to reveal</span></button>
       <button type="button" class="rcard"><span class="q">Cursor - AI editor</span><span class="a">An AI-first code editor: delegate the implementation and keep your attention on direction and review.<sup class="src">[3]</sup></span><span class="hint">Tap to reveal</span></button>
       <button type="button" class="rcard"><span class="q">Personal assistants</span><span class="a">Assistants like Instinct work where you already talk - WhatsApp or iMessage. You text a request like you would to a person; the assistant researches, drafts, builds and reports back, checking with you before acting on your behalf. This site was briefed by WhatsApp message.</span><span class="hint">Tap to reveal</span></button>
@@ -206,7 +208,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
   </section>
 
-  <section class="slide">
+  <section class="slide dense">
     <div class="kicker">03 - The loop that built this kit</div>
     <h2>Steps 1-4: brief to critique</h2>
     <div>
@@ -228,7 +230,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
   </section>
 
-  <section class="slide">
+  <section class="slide dense">
     <div class="kicker">04 - The actual prompts</div>
     <h2>Real prompts, typos included - tap a card</h2>
     <div class="rcards">
@@ -250,7 +252,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
   </section>
 
-  <section class="slide">
+  <section class="slide dense">
     <div class="kicker">06 - Your turn</div>
     <h2>Run the same loop for your clip</h2>
     <div>
