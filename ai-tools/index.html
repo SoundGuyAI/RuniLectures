@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Workflow &middot; Business Without Borders</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>:root{--a1:#8fa4ff;--a2:#5b2fd9;--a3:#ff5fd0}</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="blob" style="width:40vw;height:40vw;background:#5b2fd9;top:-14vw;right:-10vw;animation:drift 30s ease-in-out infinite alternate"></div>
+<div class="blob" style="width:32vw;height:32vw;background:#ff5fd0;bottom:-10vw;left:-10vw;opacity:.14;animation:drift 36s ease-in-out infinite alternate-reverse"></div>
+<nav>
+  <a href="../index.html">&larr; All destinations</a>
+  <span class="here">AI workflow</span>
+  <span class="links"><a href="../colombia/">Colombia</a><a href="../czech-republic/">Czechia</a><a href="../nigeria/">Nigeria</a><a href="../sri-lanka/">Sri Lanka</a></span>
+</nav>
+
+<header>
+  <div class="kicker">Instructor session</div>
+  <h1>The AI Workflow</h1>
+  <p class="lede">The tools, and more importantly the loop, behind this entire kit. Everything on this site - research, copy, design, code, repo - was produced by AI agents steered by a human. This session shows you exactly how, so you can do it for your assignment.</p>
+  <div class="hero-chips">
+    <span class="chip">Claude Code &middot; Codex &middot; Cursor</span>
+    <span class="chip">Personal assistants</span>
+    <span class="chip">AI video</span>
+    <span class="chip">The loop, documented</span>
+  </div>
+  <span class="vo soon" aria-disabled="true"><span class="dot"></span> English narration - coming soon</span>
+</header>
+
+<main>
+
+<section class="reveal">
+  <h2><span class="n">01</span>The shift: from answers to agents</h2>
+  <p class="sub">The first wave of AI tools answered questions. The current wave <i>does work</i>: reads your files, writes code, runs it, checks the result, and iterates - while you steer.</p>
+  <div class="twocol">
+    <div class="fact"><h4>Then: <span class="em">ask and copy</span></h4><p>You asked a chatbot for text, copied it, and did the real work yourself. The AI was a smart typewriter.</p></div>
+    <div class="fact"><h4>Now: <span class="em">delegate and review</span></h4><p>You describe an outcome. An agent plans, executes across tools, and reports back with evidence. Your job shifts to direction, review and judgment - the skills this course is grading.</p></div>
+  </div>
+  <div class="notice" style="margin-top:1.2rem"><b>The one sentence to remember:</b> you are not the typist anymore; you are the editor-in-chief. Quality now depends on how well you brief, check and correct.</div>
+</section>
+
+<section class="reveal">
+  <h2><span class="n">02</span>The toolbox</h2>
+  <p class="sub">Five kinds of tools used in this course, each with its own job. Flip each card.</p>
+  <div class="flip-grid">
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">Coding agent</span><span class="big">Claude Code</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">An agentic coding tool that reads your codebase, edits files, runs commands and works with git - branches, commits, PRs. Terminal, IDE, desktop and browser.<sup class="src">[1]</sup> <b>This kit:</b> the design system and engine were built this way.</span>
+    </span></button>
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">Coding agent</span><span class="big">Codex</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">OpenAI's coding partner for engineering tasks - bugs, refactors, new features - designed for multi-agent workflows where several tasks run in parallel.<sup class="src">[2]</sup> <b>Reach for it when:</b> you want to delegate well-scoped engineering tasks and review the diffs.</span>
+    </span></button>
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">AI editor</span><span class="big">Cursor</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">An AI-first code editor: "turn ideas into code" - delegate implementation and keep your attention on direction and review.<sup class="src">[3]</sup> <b>Reach for it when:</b> you want to stay hands-on in the editor with AI pair-driving.</span>
+    </span></button>
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">Assistant</span><span class="big">Personal assistants</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">Assistants like Instinct work where you already talk - WhatsApp or iMessage. You text a request like you would to a person; the assistant researches, schedules, drafts, builds and reports back, checking with you before acting on your behalf. <b>This kit:</b> the whole site you are reading was briefed by WhatsApp message and built by an assistant.</span>
+    </span></button>
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">Video</span><span class="big">Google Flow</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">Google's AI creative studio: Veo generates video with native audio from text prompts and references.<sup class="src">[4]</sup> <b>Your assignment:</b> one route for your culture clip - you direct, the model renders.</span>
+    </span></button>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="n">03</span>The loop that built this kit</h2>
+  <p class="sub">The real skill is not any single tool - it is the loop. This is the sequence this kit went through, with completed steps and in-progress steps marked honestly.</p>
+  <div class="timeline">
+    <div class="tstep"><h4>1. Brief <span>done - the human writes the goal</span></h4><p>One WhatsApp message defined the course, the four countries, the deliverables (interactive sites, voiceovers, motion videos), the repo, and the documentation requirement.</p></div>
+    <div class="tstep"><h4>2. Research <span>done - sources before sentences</span></h4><p>Research came first: published business-culture guides and official pages for each country, so claims on the country pages can carry source tags.</p></div>
+    <div class="tstep"><h4>3. Prototype <span>done - v1 fast, expect it to be wrong</span></h4><p>A first interactive prototype, built quickly - and on review it was not good enough: it told rules instead of teaching judgment.</p></div>
+    <div class="tstep"><h4>4. Critique <span>done - review is where quality enters</span></h4><p>The review questions to run on any AI draft: Does it stereotype? Does it pretend there is one right answer? Is every claim sourced? Are gifts and officials handled with compliance care? Does it work on a projector and on a phone?</p></div>
+    <div class="tstep"><h4>5. Revise <span>done - same loop, better artifact</span></h4><p>The second version rebuilt the framing: hypotheses plus verification questions, scenarios with tradeoffs instead of quizzes, claim-level citations, checklists instead of tests.</p></div>
+    <div class="tstep"><h4>6. Verify <span>done - look at the actual pixels</span></h4><p>Pages get rendered and inspected at desktop and phone sizes, and interactions get exercised in a test browser - DOM success messages are not proof that something looks right.</p></div>
+    <div class="tstep"><h4>7. Publish <span>in progress - branch, PR, human merges</span></h4><p>The site lives on a branch with an open pull request; preview hosting is being set up. The human owner reviews and merges - the agent does not merge its own work.</p></div>
+    <div class="tstep"><h4>8. Media <span>next - pilot first, then scale</span></h4><p>One voiceover script and one motion-video pilot get reviewed before any batch production - the same loop applied to media.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="n">04</span>The actual prompts</h2>
+  <p class="sub">Real prompts from this project, verbatim - typos included, because real prompting is messy and agents cope. Flip to see what each one caused.</p>
+  <div class="flip-grid">
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">The opening brief</span><span class="big">"make all the presentation interactive sites&hellip; fun and juicy and flashing and interactie and not just words or slides"</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">One sentence set the design bar: interactive sites, not slide decks. It became the animated route map, flip cards, tabs, scenarios and checklists you just used. <b>Lesson:</b> describe the experience you want, not the implementation.</span>
+    </span></button>
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">The meta-prompt</span><span class="big">"i want you to document all my prompts and the workflow so the students will know how I use AI agents"</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">That sentence is why this page exists. <b>Lesson:</b> you can ask for the process itself to be documented - the workflow is a deliverable too. (This page is exactly that, which is a little recursive.)</span>
+    </span></button>
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">The delegation</span><span class="big">"accept it and let's build this together"</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">A repo invitation was accepted, a branch and pull request created, and the site shipped to it - from a chat message. <b>Lesson:</b> agents can operate real infrastructure, but the human kept the merge button.</span>
+    </span></button>
+    <button class="flip" aria-pressed="false"><span class="flip-inner">
+      <span class="face front"><span class="lbl">The mid-build steering</span><span class="big">"With Runi only a GH page is.m enough no need to clodufesle"</span><span class="hint">flip &#8635;</span></span>
+      <span class="face back">Mid-project, one short message ("GH page" = GitHub Pages, "clodufesle" = Cloudflare) cancelled a hosting plan and picked a simpler one. <b>Lesson:</b> steering is continuous. Short corrections beat long specs - you are managing a colleague, not casting a spell.</span>
+    </span></button>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="n">05</span>Rules of the loop</h2>
+  <p class="sub">What separates a professional AI workflow from gambling with a chatbot.</p>
+  <div class="twocol">
+    <div class="fact"><h4><span class="em">Sources or it didn't happen</span></h4><p>Every factual claim in this kit links to a published source. AI writes drafts; it also confabulates. Verification is your job, and it is gradable.</p></div>
+    <div class="fact"><h4><span class="em">Disclose the AI</span></h4><p>This kit discloses its AI use on every page. Your assignment requires the same. Disclosure is professionalism, not confession.</p></div>
+    <div class="fact"><h4><span class="em">Review before scale</span></h4><p>Pilot first: one video, one narration, one page - reviewed - then batch. Never mass-produce what you haven't inspected.</p></div>
+    <div class="fact"><h4><span class="em">The human owns the decision</span></h4><p>Branches and pull requests exist so a person approves what ships. Budgets, sends and merges stay with the human. Keep it that way in your own projects.</p></div>
+  </div>
+</section>
+
+<section class="reveal ceremony">
+  <h2><span class="n">06</span>Your turn</h2>
+  <p class="sub">Assignment #1 asks for an AI video clip explaining your country's business-culture approach, with AI-use disclosure. Run the same loop you just saw:</p>
+  <div class="steps">
+    <div class="stepRow"><span class="num">1</span><p><b>Brief:</b> write your goal in one message - audience, country, three cultural points, tone, length. Steal the structure of the briefs on this page.</p></div>
+    <div class="stepRow"><span class="num">2</span><p><b>Research:</b> get your cultural claims from credible sources first (the country briefings here list theirs). Paste sources into your prompt.</p></div>
+    <div class="stepRow"><span class="num">3</span><p><b>Prototype:</b> generate a first clip with a video tool (for example Google Flow). Expect it to be wrong.</p></div>
+    <div class="stepRow"><span class="num">4</span><p><b>Critique and revise:</b> list exactly what is off - facts, tone, pacing, visuals - and iterate. Two or three loops is normal.</p></div>
+    <div class="stepRow"><span class="num">5</span><p><b>Verify and disclose:</b> check every claim against your sources, watch the final render end to end, and add the AI-use disclosure required by the assignment.</p></div>
+  </div>
+  <div class="notice"><b>Attribution:</b> this assignment workflow follows the course's "same loop" asset method (Oded Sharon, 2025), applied here to the clip you will produce.</div>
+</section>
+
+<section class="reveal">
+  <h2>Sources &amp; method</h2>
+  <div class="sources">
+    <p>Tool descriptions come from each tool's own official page; no pricing or version claims are made here because they change - check the official pages for current details.</p>
+    <ol>
+      <li>[1] Anthropic, <a href="https://code.claude.com/docs/en/overview/">Claude Code overview</a> - agentic coding tool; reads codebases, edits files, runs commands; terminal, IDE, desktop and browser surfaces; git integration.</li>
+      <li>[2] OpenAI, <a href="https://openai.com/codex/">Codex</a> - coding partner for engineering tasks; multi-agent workflows.</li>
+      <li>[3] Cursor, <a href="https://cursor.com/product">Cursor product page</a> - AI-first editor; delegate implementation, keep direction.</li>
+      <li>[4] Google, <a href="https://flow.google/">Flow</a> - AI creative studio; Veo video generation with native audio; image tools.</li>
+    </ol>
+    <p style="margin-top:.8rem">The prompts quoted above are the instructor's own project messages, reproduced verbatim. This page was built with AI tools and reviewed by a human. AI use disclosed per course requirements.</p>
+  </div>
+</section>
+
+</main>
+<footer>Business Without Borders &middot; AI workflow session &middot; Reichman University course kit</footer>
+<script src="../assets/engine.js"></script>
+</body>
+</html>
