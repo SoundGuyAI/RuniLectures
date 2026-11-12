@@ -112,7 +112,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 <body>
 <div class="progress" id="prog"></div>
 <a class="home" href="../index.html">&larr; All destinations</a>
-<div class="counter" id="counter">1 / 4</div>
+<div class="counter" id="counter">1 / 7</div>
 
 <div class="deck" id="deck">
 
@@ -280,6 +280,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
       cols.forEach(function(c){ c.classList.toggle('on', c.classList.contains(b.dataset.c)); });
     };});
   });
+  show(0);
   if(qa.get('to')){ show(parseInt(qa.get('to'),10)); }
   if(qa.get('qa')==='keys'){ ['ArrowRight','ArrowRight'].forEach(function(k){ document.dispatchEvent(new KeyboardEvent('keydown',{key:k})); }); }
   if(qa.get('tab')){ document.querySelectorAll('.tritabs button[data-c="'+qa.get('tab')+'"]').forEach(function(b){ b.click(); }); }
