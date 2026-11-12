@@ -16,13 +16,15 @@ nav a:hover{color:var(--ink)}
 nav .here{color:var(--a1);font-weight:600}
 nav .links{display:flex;gap:1rem;flex-wrap:wrap}
 @media(max-width:640px){nav .links{display:none}}
-header{position:relative;z-index:1;padding:14vh 6vw 6vh;max-width:1200px;margin:0 auto}
+header{position:relative;z-index:1;padding:11vh 6vw 4vh;max-width:1200px;margin:0 auto}
 .kicker{letter-spacing:.3em;text-transform:uppercase;color:var(--a1);font-size:.75rem;margin-bottom:1rem}
 h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;line-height:1.05}
 .lede{margin-top:1.2rem;color:var(--muted);font-size:clamp(1rem,1.5vw,1.15rem);max-width:62ch}
 .hero-chips{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
 .chip{border:1px solid #2a3350;border-radius:999px;padding:.4rem .95rem;font-size:.78rem;color:var(--muted)}
 .vo{margin-top:1.8rem;display:inline-flex;align-items:center;gap:.8rem;background:var(--panel);border:1px solid #2a3350;border-radius:999px;padding:.7rem 1.4rem;cursor:pointer;color:var(--ink);font-size:.92rem}
+.vo.soon{cursor:default;opacity:.55}
+.vo.soon:hover{border-color:#2a3350}
 .vo:hover{border-color:var(--a1)}
 .vo .dot{width:.7rem;height:.7rem;border-radius:50%;background:var(--a1)}
 main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 6vw 10vh}
@@ -50,15 +52,15 @@ sup.src{color:var(--a3);font-size:.7em;cursor:pointer}
 .tabpane b{color:var(--ink)}
 /* flip cards */
 .flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem}
-.flip{display:block;width:100%;perspective:1200px;height:200px;cursor:pointer;background:none;border:none;padding:0;text-align:left;font:inherit;color:inherit}
-.flip-inner{display:block;position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.3,.9,.3,1);transform-style:preserve-3d}
+.flip{display:block;width:100%;perspective:1200px;cursor:pointer;background:none;border:none;padding:0;text-align:left;font:inherit;color:inherit}
+.flip-inner{display:grid;width:100%;transition:transform .7s cubic-bezier(.3,.9,.3,1);transform-style:preserve-3d}
 .flip[aria-pressed="true"] .flip-inner{transform:rotateY(180deg)}
-.face{display:flex;position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:1.3rem;flex-direction:column;justify-content:center;gap:.5rem;border:1px solid #232c49}
+.face{grid-area:1/1;position:relative;display:flex;min-height:200px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1.3rem;flex-direction:column;justify-content:center;gap:.5rem;border:1px solid #232c49}
 .front{background:var(--panel)}
 .front .lbl{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
 .front .big{font-size:1.2rem;font-weight:700}
 .front .hint{position:absolute;bottom:1rem;right:1.2rem;font-size:.75rem;color:var(--muted)}
-.back{background:var(--panel2);transform:rotateY(180deg);font-size:.87rem;color:var(--muted);overflow:auto}
+.back{background:var(--panel2);transform:rotateY(180deg);font-size:.87rem;color:var(--muted)}
 .back b{color:var(--ink)}
 /* scenarios: every option defensible, feedback = tradeoffs */
 .scenario{background:var(--panel);border:1px solid #232c49;border-radius:20px;padding:2rem;margin-top:1.4rem}
