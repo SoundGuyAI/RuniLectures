@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colombia - Sample slides - Business Without Borders</title>
+<style>
+:root{
+  --bg:#0a0d16; --panel:#121728; --panel2:#171f36; --ink:#f2f5ff; --muted:#9aa5c4;
+  --yel:#fcd116; --red:#ce1126; --blue:#2f6fd6; --green:#3cc88c;
+}
+*{margin:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,sans-serif;overflow:hidden}
+.deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6vh 7vw;
+  opacity:0;visibility:hidden;transform:translateX(60px) scale(.98);transition:opacity .5s ease,transform .5s ease,visibility 0s linear .5s}
+.slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .5s ease,transform .5s ease,visibility 0s}
+.slide.exit-left{transform:translateX(-60px) scale(.98)}
+.kicker{color:var(--yel);letter-spacing:.28em;text-transform:uppercase;font-weight:700;font-size:clamp(.7rem,1.6vw,1rem)}
+h1{font-size:clamp(2rem,6vw,4.4rem);line-height:1.05;margin:.4em 0 .3em}
+h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
+.lede{color:var(--muted);font-size:clamp(1rem,2.2vw,1.45rem);max-width:56ch;line-height:1.5}
+.src{color:var(--blue);font-size:.65em;vertical-align:super;font-weight:700}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:4vw;align-items:center}
+.illus{border-radius:22px;width:100%;display:block;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.badge{display:inline-block;background:rgba(252,209,22,.14);color:var(--yel);border:1px solid rgba(252,209,22,.4);
+  border-radius:999px;padding:.35em 1em;font-size:clamp(.7rem,1.5vw,.95rem);font-weight:700;margin-top:1.2em}
+/* day planner graphic */
+.planner{display:flex;flex-direction:column;gap:clamp(8px,1.6vh,18px);margin-top:2vh}
+.slot{display:grid;grid-template-columns:clamp(64px,9vw,110px) 1fr;gap:14px;align-items:center;
+  opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.slide.active .slot{opacity:1;transform:none}
+.slot:nth-child(1){transition-delay:.15s}.slot:nth-child(2){transition-delay:.3s}
+.slot:nth-child(3){transition-delay:.45s}.slot:nth-child(4){transition-delay:.6s}
+.slot:nth-child(5){transition-delay:.75s}
+.slot time{color:var(--muted);font-size:clamp(.75rem,1.7vw,1.05rem);font-weight:700;text-align:right}
+.bar{height:clamp(30px,5.4vh,54px);border-radius:12px;display:flex;align-items:center;padding:0 16px;
+  font-weight:700;font-size:clamp(.72rem,1.6vw,1rem);white-space:nowrap;overflow:hidden}
+.bar.meet{background:linear-gradient(90deg,var(--blue),#5a8fe8);color:#fff}
+.bar.traffic{background:repeating-linear-gradient(45deg,#3a2418,#3a2418 10px,#4a2e1c 10px,#4a2e1c 20px);color:#e8b04a}
+.bar.lunch{background:linear-gradient(90deg,#1d5c40,var(--green));color:#eafff5}
+.bar.buffer{background:var(--panel2);color:var(--muted);border:1px dashed #39466e}
+/* whatsapp mock */
+.phone{background:#0b141a;border-radius:28px;border:3px solid #22303c;max-width:340px;margin:0 auto;
+  padding:18px 14px;display:flex;flex-direction:column;gap:10px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.msg{max-width:85%;padding:.6em .9em;border-radius:14px;font-size:clamp(.72rem,1.7vw,.98rem);line-height:1.35;
+  opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.msg.in{background:#1f2c34;color:#e9edef;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.out{background:#005c4b;color:#eafff5;align-self:flex-end;border-bottom-right-radius:4px}
+.slide.active .msg{opacity:1;transform:none}
+.msg:nth-child(1){transition-delay:.2s}.msg:nth-child(2){transition-delay:.8s}
+.msg:nth-child(3){transition-delay:1.4s}.msg:nth-child(4){transition-delay:2s}
+/* negotiation */
+.price-row{display:flex;align-items:baseline;gap:1.2em;margin:.5em 0}
+.price{font-size:clamp(1.8rem,5vw,3.4rem);font-weight:800;color:var(--yel)}
+.tick{opacity:0;transform:translateX(-18px);transition:opacity .4s,transform .4s;display:flex;gap:.7em;align-items:flex-start;
+  color:var(--ink);font-size:clamp(.95rem,2vw,1.3rem);margin:.55em 0;line-height:1.4}
+.slide.active .tick{opacity:1;transform:none}
+.tick:nth-child(1){transition-delay:.2s}.tick:nth-child(2){transition-delay:.5s}.tick:nth-child(3){transition-delay:.8s}
+.tick::before{content:"";flex:0 0 .8em;height:.8em;margin-top:.3em;border-radius:3px;background:var(--green)}
+/* three-way contrast */
+.tri{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2vw;margin-top:2vh}
+.col{background:var(--panel);border-radius:18px;padding:clamp(14px,2vw,26px);display:flex;flex-direction:column;gap:.7em;
+  opacity:0;transform:translateY(26px);transition:opacity .55s ease,transform .55s ease}
+.slide.active .col{opacity:1;transform:none}
+.col:nth-child(1){transition-delay:.15s}.col:nth-child(2){transition-delay:.45s}.col:nth-child(3){transition-delay:.75s}
+.col .flag{font-weight:800;letter-spacing:.14em;font-size:clamp(.72rem,1.6vw,1rem)}
+.col.isr .flag{color:#7ea8ff}.col.usa .flag{color:#ff8f9c}.col.dest .flag{color:var(--yel)}
+.tag{font-size:.68em;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.say{background:var(--panel2);border-radius:14px;padding:.7em .9em;font-style:italic;
+  font-size:clamp(.85rem,1.9vw,1.15rem);line-height:1.35}
+.read{font-size:clamp(.8rem,1.8vw,1.05rem);color:var(--muted);line-height:1.45}
+.move{margin-top:auto;font-size:clamp(.8rem,1.8vw,1.05rem);color:var(--green);font-weight:700;line-height:1.4}
+.tritabs{display:none}
+@media (max-width:820px){
+  .tri{display:block;margin-top:1.2vh}
+  .tritabs{display:flex;gap:8px;margin-bottom:1.6vh}
+  .tritabs button{flex:1;background:var(--panel2);color:var(--muted);border:1px solid #2c3a5f;border-radius:999px;
+    padding:.55em .3em;font-weight:800;letter-spacing:.08em;font-size:.72rem;cursor:pointer;transition:background .15s,color .15s}
+  .tritabs button.on{color:var(--ink);border-color:var(--yel);background:#22315a}
+  .col{display:none}
+  .slide.active .col{opacity:0;transform:translateY(26px)}
+  .slide.active .col.on{opacity:1;transform:none}
+  .col.on{display:flex}
+}
+/* chrome */
+.nav{position:fixed;bottom:3.2vh;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:center;z-index:10}
+.nav button{background:var(--panel2);color:var(--ink);border:1px solid #2c3a5f;border-radius:999px;
+  width:56px;height:56px;font-size:1.3rem;cursor:pointer;transition:transform .15s,background .15s}
+.nav button:hover{background:#22315a;transform:scale(1.06)}
+.counter{position:fixed;top:3vh;right:3vw;color:var(--muted);font-weight:700;font-size:clamp(.8rem,1.8vw,1.1rem);z-index:10}
+.progress{position:fixed;top:0;left:0;height:4px;background:var(--yel);width:0;transition:width .5s ease;z-index:11}
+.home{position:fixed;top:3vh;left:3vw;color:var(--muted);text-decoration:none;font-weight:700;z-index:10}
+.sources{position:fixed;bottom:3.2vh;left:3vw;max-width:38vw;color:var(--muted);font-size:clamp(.6rem,1.3vw,.8rem);line-height:1.5;z-index:10}
+.sources b{color:var(--ink)}
+@media (max-width:820px){
+  .bar{white-space:normal;height:auto;min-height:44px;padding:8px 12px;line-height:1.3}
+  .price-row{flex-direction:column;gap:.1em}
+
+  .split{grid-template-columns:1fr;gap:3vh}
+  .slide{padding:9vh 6vw 16vh;justify-content:flex-start;overflow-y:auto}
+  .illus{max-height:34vh;object-fit:cover}
+  .sources{position:static;max-width:none;margin-top:3vh}
+  .nav button{width:64px;height:64px}
+}
+@media (prefers-reduced-motion:reduce){
+  .slide,.slot,.msg,.tick{transition:none!important}
+  .slot,.msg,.tick{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<a class="home" href="../index.html">&larr; All destinations</a>
+<div class="counter" id="counter">1 / 4</div>
+
+<div class="deck" id="deck">
+
+  <section class="slide active">
+    <div class="split">
+      <div>
+        <div class="kicker">Field briefing - Colombia</div>
+        <h1>Two meetings a day.<br><span style="color:var(--yel)">Not five.</span></h1>
+        <p class="lede">A working visit to Bogota, planned from Colombian trade sources - not guesses.<sup class="src">[1][2]</sup></p>
+        <span class="badge">Ask - Check - Adapt</span>
+      </div>
+      <img class="illus" src="colombia-greeting.png" alt="Illustration: two professionals shaking hands in a Bogota office, mountains behind (generated illustration)">
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Move 1 - Plan the day</div>
+    <h2>Bogota traffic sets your agenda</h2>
+    <p class="lede">Guests are expected to be on time even when counterparts run late. EDC's Bogota office calls three meetings a day unrealistic - plan for two.<sup class="src">[1]</sup></p>
+    <div class="planner">
+      <div class="slot"><time>08:30</time><div class="bar meet">Meeting 1 - boardroom, suits, first contact</div></div>
+      <div class="slot"><time>10:30</time><div class="bar traffic">Cross-town buffer, not a meeting (illustrative: allow up to 90 min)</div></div>
+      <div class="slot"><time>12:30</time><div class="bar lunch">Working lunch - relationships are built here<sup class="src">[2]</sup></div></div>
+      <div class="slot"><time>15:00</time><div class="bar meet">Meeting 2 - and the decision-maker may join only for the last 10 minutes<sup class="src">[1]</sup></div></div>
+      <div class="slot"><time>17:00</time><div class="bar buffer">Keep the late afternoon open - the sources advise a light schedule</div></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="split">
+      <div>
+        <div class="kicker">Move 2 - Stay close</div>
+        <h2>Business moves to WhatsApp</h2>
+        <p class="lede">Face time matters: a senior visit still counts, and representatives alone are not enough.<sup class="src">[1]</sup> Between visits, WhatsApp is one of the most common ways to stay connected in Colombia.<sup class="src">[1]</sup></p>
+        <p class="lede" style="margin-top:1em">Have your materials professionally translated into Spanish - EDC cautions against relying on machine translation.<sup class="src">[1]</sup></p>
+      </div>
+      <div class="phone">
+        <div class="msg in">Buenas tardes! Ready for the proposal?</div>
+        <div class="msg out">Sending the Spanish version tonight, translated properly.</div>
+        <div class="msg in">Perfect. Our director joins Friday's call.</div>
+        <div class="msg out">We'll bring the after-sales plan - that is what she will ask about.<sup class="src">[2]</sup></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Move 3 - Expect the negotiation</div>
+    <h2>Prepare for the price conversation.</h2>
+    <div class="price-row"><span class="price">Know the local price</span><span class="lede">before you quote<sup class="src">[1]</sup></span></div>
+    <div>
+      <div class="tick">Research what your sector actually charges in Colombia - and what competitors offer.<sup class="src">[1]</sup></div>
+      <div class="tick">Prepare arguments for your price; payment terms can be your lever.<sup class="src">[1]</sup></div>
+      <div class="tick">Plan local after-sales support as part of the offer, not an extra - trade.gov advises demonstrating service capability in-country.<sup class="src">[2]</sup></div>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div class="kicker">Contrast - Same moment, three rooms</div>
+    <h2>You pitch. They smile. What did that mean?</h2>
+    <div class="tri">
+      <div class="tritabs"><button class="on" data-c="isr">ISRAEL</button><button data-c="usa">USA</button><button data-c="dest">COLOMBIA</button></div>
+      <div class="col isr">
+        <div class="flag">ISRAEL</div>
+        <div class="tag">Illustrative scenario</div>
+        <div class="say">"Looks good. Send it over."</div>
+        <p class="read">Direct, frank style; contradicting opinions are normal and spoken openly; interruptions can read as engagement.<sup class="src">[4][8]</sup></p>
+        <p class="move">Move: same check as in every room - ask for the concrete next step.</p>
+      </div>
+      <div class="col usa">
+        <div class="flag">UNITED STATES</div>
+        <div class="tag">Illustrative scenario</div>
+        <div class="say">"This is great stuff!"</div>
+        <p class="read">Direct but framed positively; an optimistic tone "can mask underlying criticism". A "yes" is a commitment, praise may not be.<sup class="src">[5]</sup></p>
+        <p class="move">Move: ask what happens next. Praise plus a calendar invite is a stronger signal than praise alone; watch the follow-through.</p>
+      </div>
+      <div class="col dest">
+        <div class="flag">COLOMBIA</div>
+        <div class="tag">Illustrative scenario</div>
+        <div class="say">"Que bien! We will look at it with pleasure."</div>
+        <p class="read">Warmth protects the relationship; meaning is read between the lines.<sup class="src">[6]</sup> Politeness is not a purchase order.</p>
+        <p class="move">Move: confirm interest with a written next step, over WhatsApp, same week.<sup class="src">[1]</sup></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Contrast - Disagreeing</div>
+    <h2>Saying "no" without saying it</h2>
+    <div class="tri">
+      <div class="tritabs"><button class="on" data-c="isr">ISRAEL</button><button data-c="usa">USA</button><button data-c="dest">COLOMBIA</button></div>
+      <div class="col isr">
+        <div class="flag">ISRAEL</div>
+        <div class="tag">Illustrative scenario</div>
+        <div class="say">"This price is not serious."</div>
+        <p class="read">Argument is part of the communication culture; honesty is expected and respected.<sup class="src">[4]</sup></p>
+        <p class="move">Move: don't take offense. Argue back with data.</p>
+      </div>
+      <div class="col usa">
+        <div class="flag">UNITED STATES</div>
+        <div class="tag">Illustrative scenario</div>
+        <div class="say">"We're excited, but the numbers need work."</div>
+        <p class="read">Direct, outcome-focused, framed as a solution; the criticism is in the second half of the sentence.<sup class="src">[5]</sup></p>
+        <p class="move">Move: hear the "but". Ask exactly what needs to change.</p>
+      </div>
+      <div class="col dest">
+        <div class="flag">COLOMBIA</div>
+        <div class="tag">Illustrative scenario</div>
+        <div class="say">"Perhaps we can review the details next week."</div>
+        <p class="read">Disagreement is often handled indirectly to protect dignity and the relationship; face-saving matters around refusal.<sup class="src">[6]</sup></p>
+        <p class="move">Move: protect the relationship first; open space for them to adjust without losing face.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Sources and method</div>
+    <h2>Where this comes from</h2>
+    <div style="max-width:70ch;display:flex;flex-direction:column;gap:1.2em">
+      <p class="lede"><b style="color:var(--ink)">[1] EDC (Export Development Canada)</b> - "Doing business in Colombia: 10 business etiquette tips" (2023), written by EDC's chief representative in Bogota. edc.ca</p>
+      <p class="lede"><b style="color:var(--ink)">[2] U.S. International Trade Administration</b> - Colombia Country Commercial Guide: Business Travel, and Selling Factors &amp; Techniques (updated 2026). trade.gov</p>
+      <p class="lede"><b style="color:var(--ink)">[3] Commisceo Global</b> - Colombia Country Guide. commisceo-global.com</p>
+      <p class="lede"><b style="color:var(--ink)">[4] Training CQ</b> - "Israeli Business Culture" (cross-cultural training firm). trainingcq.com</p>
+      <p class="lede"><b style="color:var(--ink)">[5] Commisceo Global</b> - USA Country Guide: "feedback is often direct, although it may be framed positively"; an optimistic tone "can sometimes mask underlying criticism". commisceo-global.com</p>
+      <p class="lede"><b style="color:var(--ink)">[6] Commisceo Global</b> - Colombia Country Guide: disagreement "handled indirectly to protect dignity and the relationship". commisceo-global.com</p>
+      <p class="lede"><b style="color:var(--ink)">[7] Erin Meyer, INSEAD</b> - The Culture Map: US managers tend to precede negative feedback with positive comments; Israeli and Dutch cultures get straight to the point. erinmeyer.com/tools/the-culture-map</p>
+      <p class="lede"><b style="color:var(--ink)">[8] Tel Aviv-Yafo Municipality</b> - "Business Culture in Israel": informality, and interruptions read as engagement. tel-aviv.gov.il</p>
+      <p class="lede" style="color:var(--muted)">Illustrations in this briefing are AI-generated for the course and labeled as such - they are not documentary photos. Customs vary by region, sector and company: verify before you act.</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" aria-label="Previous slide">&larr;</button>
+  <button id="next" aria-label="Next slide">&rarr;</button>
+</div>
+
+
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
+  var counter=document.getElementById('counter'), prog=document.getElementById('prog');
+  function show(n){
+    slides[i].classList.remove('active');
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides[i].classList.add('active');
+    counter.textContent=(i+1)+' / '+slides.length;
+    prog.style.width=((i)/(slides.length-1)*100)+'%';
+  }
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();show(i+1)}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
+  });
+  var qa=new URLSearchParams(location.search);
+  document.querySelectorAll('.tri').forEach(function(tri){
+    var tabs=[].slice.call(tri.querySelectorAll('.tritabs button')), cols=[].slice.call(tri.querySelectorAll('.col'));
+    if(cols.length) cols[0].classList.add('on');
+    tabs.forEach(function(b){ b.onclick=function(){
+      tabs.forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+      cols.forEach(function(c){ c.classList.toggle('on', c.classList.contains(b.dataset.c)); });
+    };});
+  });
+  if(qa.get('to')){ show(parseInt(qa.get('to'),10)); }
+  if(qa.get('qa')==='keys'){ ['ArrowRight','ArrowRight'].forEach(function(k){ document.dispatchEvent(new KeyboardEvent('keydown',{key:k})); }); }
+  if(qa.get('tab')){ document.querySelectorAll('.tritabs button[data-c="'+qa.get('tab')+'"]').forEach(function(b){ b.click(); }); }
+  var x0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(dx<-50)show(i+1); else if(dx>50)show(i-1);
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
