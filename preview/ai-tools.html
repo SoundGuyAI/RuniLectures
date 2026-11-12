@@ -60,6 +60,13 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 .tick::before{content:"";flex:0 0 .8em;height:.8em;margin-top:.3em;border-radius:3px;background:var(--green)}
 /* dense slides scroll instead of clipping under fixed chrome */
 .slide.dense{justify-content:flex-start;overflow-y:auto;padding-top:11vh;padding-bottom:17vh}
+.slide.dense h2{font-size:clamp(1.5rem,3.2vw,2.3rem)}
+.slide.dense .lede{font-size:clamp(.88rem,1.7vw,1.08rem);max-width:70ch}
+.slide.dense .rcard{padding:clamp(9px,1.2vw,14px)}
+.slide.dense .rcard .q{font-size:clamp(.88rem,1.7vw,1.08rem)}
+.slide.dense .rcard .a{font-size:clamp(.76rem,1.5vw,.94rem);line-height:1.4}
+.slide.dense .ostep{font-size:clamp(.8rem,1.6vw,1rem);margin:.35em 0}
+.slide.dense .tick{font-size:clamp(.85rem,1.7vw,1.1rem);margin:.4em 0}
 /* AI session extras */
 .flow{display:flex;flex-direction:column;gap:.45em}
 .fchip{background:var(--panel);border:1px solid #22315a;border-radius:999px;padding:.45em 1.1em;font-weight:700;
