@@ -107,6 +107,10 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   .slide,.slot,.msg,.tick{transition:none!important}
   .slot,.msg,.tick{opacity:1!important;transform:none!important}
 }
+.srclist{display:grid;grid-template-columns:1fr 1fr;gap:.8em 2em;max-width:none}
+.srclist p{font-size:clamp(.66rem,1.35vw,.92rem);margin:0;line-height:1.4}
+.srclist p:last-child{grid-column:1/-1}
+@media (max-width:820px){.srclist{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -150,6 +154,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
         <p class="lede" style="margin-top:1em">Have your materials professionally translated into Spanish - EDC cautions against relying on machine translation.<sup class="src">[1]</sup></p>
       </div>
       <div class="phone">
+        <div class="tag" style="text-align:center">Illustrative scenario</div>
         <div class="msg in">Buenas tardes! Ready for the proposal?</div>
         <div class="msg out">Sending the Spanish version tonight, translated properly.</div>
         <div class="msg in">Perfect. Our director joins Friday's call.</div>
@@ -231,7 +236,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   <section class="slide">
     <div class="kicker">Sources and method</div>
     <h2>Where this comes from</h2>
-    <div style="max-width:70ch;display:flex;flex-direction:column;gap:1.2em">
+    <div class="srclist">
       <p class="lede"><b style="color:var(--ink)">[1] EDC (Export Development Canada)</b> - "Doing business in Colombia: 10 business etiquette tips" (2023), written by EDC's chief representative in Bogota. edc.ca</p>
       <p class="lede"><b style="color:var(--ink)">[2] U.S. International Trade Administration</b> - Colombia Country Commercial Guide: Business Travel, and Selling Factors &amp; Techniques (updated 2026). trade.gov</p>
       <p class="lede"><b style="color:var(--ink)">[3] Commisceo Global</b> - Colombia Country Guide. commisceo-global.com</p>
@@ -240,6 +245,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
       <p class="lede"><b style="color:var(--ink)">[6] Commisceo Global</b> - Colombia Country Guide: disagreement "handled indirectly to protect dignity and the relationship". commisceo-global.com</p>
       <p class="lede"><b style="color:var(--ink)">[7] Erin Meyer, INSEAD</b> - The Culture Map: US managers tend to precede negative feedback with positive comments; Israeli and Dutch cultures get straight to the point. erinmeyer.com/tools/the-culture-map</p>
       <p class="lede"><b style="color:var(--ink)">[8] Tel Aviv-Yafo Municipality</b> - "Business Culture in Israel": informality, and interruptions read as engagement. tel-aviv.gov.il</p>
+      <p class="lede" style="color:var(--muted)">Hear or read the narration: <a href="colombia-script.html" style="color:var(--blue)">script and voice-over draft</a> (review draft).</p>
       <p class="lede" style="color:var(--muted)">Illustrations in this briefing are AI-generated for the course and labeled as such - they are not documentary photos. Customs vary by region, sector and company: verify before you act.</p>
     </div>
   </section>
