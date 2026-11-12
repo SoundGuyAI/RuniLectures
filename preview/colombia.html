@@ -265,13 +265,13 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 
 
 
-<audio class="vo" preload="none" src="audio/colombia-1.m4a"></audio>
-<audio class="vo" preload="none" src="audio/colombia-2.m4a"></audio>
-<audio class="vo" preload="none" src="audio/colombia-3.m4a"></audio>
-<audio class="vo" preload="none" src="audio/colombia-4.m4a"></audio>
-<audio class="vo" preload="none" src="audio/colombia-5.m4a"></audio>
-<audio class="vo" preload="none" src="audio/colombia-6.m4a"></audio>
-<audio class="vo" preload="none" src="audio/colombia-7.m4a"></audio>
+<audio class="vo" preload="none" data-src="audio/colombia-1.m4a"></audio>
+<audio class="vo" preload="none" data-src="audio/colombia-2.m4a"></audio>
+<audio class="vo" preload="none" data-src="audio/colombia-3.m4a"></audio>
+<audio class="vo" preload="none" data-src="audio/colombia-4.m4a"></audio>
+<audio class="vo" preload="none" data-src="audio/colombia-5.m4a"></audio>
+<audio class="vo" preload="none" data-src="audio/colombia-6.m4a"></audio>
+<audio class="vo" preload="none" data-src="audio/colombia-7.m4a"></audio>
 <script>
 (function(){
   var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
@@ -294,12 +294,25 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   var voBtn=document.getElementById('voBtn'), auds=[].slice.call(document.querySelectorAll('audio.vo')), playing=false;
   function voStop(){ auds.forEach(function(a){ a.pause(); a.currentTime=0; }); playing=false;
     voBtn.classList.remove('playing'); voBtn.innerHTML='&#9654; Listen'; }
+  function voPlay(){
+    var a=auds[i]; if(!a) return;
+    var p=a.play(); if(p&&p.catch)p.catch(function(){voStop()});
+    playing=true; voBtn.classList.add('playing'); voBtn.innerHTML='&#10074;&#10074; Pause';
+  }
   voBtn.onclick=function(){
     if(playing){ voStop(); return; }
     voStop();
     var a=auds[i]; if(!a) return;
-    var p=a.play(); if(p&&p.catch)p.catch(function(){voStop()});
-    playing=true; voBtn.classList.add('playing'); voBtn.innerHTML='&#10074;&#10074; Pause';
+    if(a.getAttribute('src')){ voPlay(); return; }
+    voBtn.innerHTML='Loading&hellip;';
+    fetch(a.dataset.src).then(function(r){ if(!r.ok)throw new Error('http '+r.status); return r.text(); })
+      .then(function(t){
+        var bin=atob(t.replace(/\s+/g,'')), bytes=new Uint8Array(bin.length);
+        for(var k=0;k<bin.length;k++)bytes[k]=bin.charCodeAt(k);
+        a.src=URL.createObjectURL(new Blob([bytes],{type:'audio/mp4'}));
+        voPlay();
+      })
+      .catch(function(){ voStop(); voBtn.innerHTML='Audio unavailable'; });
   };
   auds.forEach(function(a){ a.addEventListener('ended',voStop); });
   var qa=new URLSearchParams(location.search);
