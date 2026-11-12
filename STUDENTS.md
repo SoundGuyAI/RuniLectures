@@ -58,7 +58,7 @@ If you want a deck instead of a scrolling page: one bounded slide at a time, nex
 - [ ] Every slide/screenshot inspected at both sizes
 - [ ] Every claim has a source; every source URL opens
 - [ ] Sources slide lists real URLs, and generated media is labeled
-- [ ] AI-use disclosure present (your assignment requires it)
+- [ ] AI-use disclosure present
 - [ ] No absolute claims about whole nations
 - [ ] Your agent opened a PR; a human reviewed and merged it
 
