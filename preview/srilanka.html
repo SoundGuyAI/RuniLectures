@@ -58,6 +58,8 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 .slide.active .tick{opacity:1;transform:none}
 .tick:nth-child(1){transition-delay:.2s}.tick:nth-child(2){transition-delay:.5s}.tick:nth-child(3){transition-delay:.8s}
 .tick::before{content:"";flex:0 0 .8em;height:.8em;margin-top:.3em;border-radius:3px;background:var(--green)}
+/* dense slides scroll instead of clipping under fixed chrome */
+.slide.dense{justify-content:flex-start;overflow-y:auto;padding-top:11vh;padding-bottom:17vh}
 /* reveal cards */
 .rcards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.6vw,20px);margin-top:1.6vh}
 .rcard{background:var(--panel);border:1px solid #22315a;border-radius:16px;padding:clamp(12px,1.8vw,22px);
@@ -175,7 +177,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
   </section>
 
-  <section class="slide">
+  <section class="slide dense">
     <div class="kicker">Move 3 - Reading the answer</div>
     <h2>"We will try" is not a yes</h2>
     <p class="lede">First meetings test reliability and respect; trust builds through repeated interaction, and a warm meeting is not final approval - find out who recommends, influences, approves and implements.<sup class="src">[2]</sup> Tap a card.</p>
@@ -187,15 +189,15 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
   </section>
 
-  <section class="slide">
+  <section class="slide dense">
     <div class="kicker">Scenario - The thank-you gift</div>
     <h2>The meeting went well. What do you give?</h2>
-    <p class="lede">Illustrative scenario. Practice patterns to check with the recipient's office, not rules that apply to everyone - tap each step.</p>
+    <p class="lede">Illustrative scenario. Practice patterns to check with the recipient's office, not rules that apply to everyone - tap each step. Source [3] is a Sri Lankan gifting vendor's current practice guide: useful, but commercially interested.</p>
     <div class="rcards">
-      <button type="button" class="rcard"><span class="q">1 - Check the policy first</span><span class="a">Many listed companies and public-sector bodies cap what staff can accept, so check the recipient's gift policy before you buy anything.<sup class="src">[3]</sup></span><span class="hint">Tap to reveal</span></button>
+      <button type="button" class="rcard"><span class="q">1 - Check the policy first</span><span class="a">A local gifting vendor notes that many listed companies and public-sector bodies cap what staff can accept<sup class="src">[3]</sup> - so check the recipient's gift policy before you buy anything.</span><span class="hint">Tap to reveal</span></button>
       <button type="button" class="rcard"><span class="q">2 - Keep it modest</span><span class="a">A small item from your home country suits a completed agreement or a home invitation; offer and receive with the right hand or both hands.<sup class="src">[2][3]</sup></span><span class="hint">Tap to reveal</span></button>
       <button type="button" class="rcard"><span class="q">3 - When is it opened?</span><span class="a">Sources disagree: one says office gifts are usually opened in public at a desk,<sup class="src">[3]</sup> another says gifts may not be opened immediately.<sup class="src">[2]</sup> Follow your host's lead.</span><span class="hint">Tap to reveal</span></button>
-      <button type="button" class="rcard"><span class="q">4 - Watch the calendar</span><span class="a">Natural gift moments include Avurudu (Sinhala and Tamil New Year), Vesak, Eid, Deepavali and Christmas; a Poya day is not a natural moment for a celebratory delivery. In mixed-faith offices, shared gifts commonly avoid alcohol, pork and beef.<sup class="src">[3]</sup></span><span class="hint">Tap to reveal</span></button>
+      <button type="button" class="rcard"><span class="q">4 - Watch the calendar</span><span class="a">The vendor guide lists Avurudu (Sinhala and Tamil New Year), Vesak, Eid, Deepavali and Christmas as natural gift moments - a Poya day is not one - and notes that mixed-faith offices commonly avoid alcohol, pork and beef in shared gifts.<sup class="src">[3]</sup></span><span class="hint">Tap to reveal</span></button>
     </div>
   </section>
 
