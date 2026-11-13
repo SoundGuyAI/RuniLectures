@@ -20,7 +20,7 @@ h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.1;margin:.25em 0 .2em}
 .hintline{margin-top:1.6vh;color:var(--muted);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.8}
 /* hero image with slow zoom and click-to-read overlay */
 .hero{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);cursor:pointer;border:1px solid #22315a;margin-top:2vh}
-.hero img{width:100%;display:block;animation:herozoom 16s ease-in-out infinite alternate}
+.hero img{width:100%;max-height:58vh;object-fit:cover;display:block;animation:herozoom 16s ease-in-out infinite alternate}
 @keyframes herozoom{from{transform:scale(1)}to{transform:scale(1.055)}}
 .hero .cap{position:absolute;inset:0;background:rgba(8,11,20,.94);display:flex;flex-direction:column;justify-content:center;gap:.9em;padding:clamp(16px,3vw,40px);opacity:0;pointer-events:none;transition:opacity .3s}
 .hero.open .cap{opacity:1;pointer-events:auto}
