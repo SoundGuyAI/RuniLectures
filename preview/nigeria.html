@@ -117,6 +117,15 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 .srclist p:last-child{grid-column:1/-1}
 @media (max-width:820px){.srclist{grid-template-columns:1fr}}
 
+
+/* click-to-reveal pickers (new slides) */
+.pickrow{display:flex;gap:12px;margin-top:2vh}
+.pickrow button{flex:1;background:var(--panel2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.8em 1em;text-align:left;cursor:pointer;color:var(--ink)}
+.pickrow button b{display:block;letter-spacing:.14em;font-size:clamp(.62rem,1.2vw,.8rem);color:var(--yel)}
+.pickrow button span{display:block;margin-top:.3em;color:var(--muted);font-size:clamp(.68rem,1.4vw,.9rem);line-height:1.35}
+.pickrow button.on{border-color:var(--yel)}
+.pickcol{display:none;margin-top:1.5vh;background:var(--panel2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:clamp(10px,1.6vw,18px)}
+.pickcol.on{display:block}
 </style>
 </head>
 <body>
@@ -247,11 +256,11 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
     <img class="illus" data-illus="0" style="max-height:30vh;object-fit:cover" alt="Illustration: a business greeting in a Lagos office (generated illustration, reused from an earlier slide)">
   </div>
-  <div class="tri" style="margin-top:2vh">
-    <div class="tritabs"><button class="on" data-c="slides">SLIDES</button><button data-c="handouts">HANDOUTS</button><button data-c="video">VIDEO</button></div>
-    <div class="col slides"><div class="flag">SLIDES</div><p class="read">Greetings come first - family, journey, then the agenda.<sup class="src">[9]</sup> Titles matter: Chief, Doctor, Engineer, Alhaji, Pastor.<sup class="src">[9]</sup></p><p class="move">Our suggestion: the deck after pleasantries, titles on the cover.</p></div><div class="col handouts"><div class="flag">HANDOUTS</div><p class="read">Exchange anything with the right hand or both hands.<sup class="src">[9]</sup> Dressing well shows respect.<sup class="src">[9]</sup></p><p class="move">Our suggestion: a right-hand handout, quality print.</p></div><div class="col video"><div class="flag">VIDEO</div><p class="read">No source covers video specifically. Lagos and Kano differ - one script does not fit the country.<sup class="src">[9]</sup></p><p class="move">Our suggestion: a short clip, rapport first.</p></div>
+    <div class="pick">
+    <div class="pickrow"><button class="on" data-p="slides"><b>SLIDES</b><span>After the greetings, with titles</span></button><button data-p="handouts"><b>HANDOUTS</b><span>Right hand, quality print</span></button><button data-p="video"><b>VIDEO</b><span>Short clip, rapport first</span></button></div>
+    <div class="pickcol on slides"><p class="read">Greetings come first - family, journey, then the agenda.<sup class="src">[9]</sup> Titles matter: Chief, Doctor, Engineer, Alhaji, Pastor.<sup class="src">[9]</sup></p><p class="move">Our suggestion: the deck after pleasantries, titles on the cover.</p></div><div class="pickcol handouts"><p class="read">Exchange anything with the right hand or both hands.<sup class="src">[9]</sup> Dressing well shows respect.<sup class="src">[9]</sup></p><p class="move">Our suggestion: a right-hand handout, quality print.</p></div><div class="pickcol video"><p class="read">No source covers video specifically. Lagos and Kano differ - one script does not fit the country.<sup class="src">[9]</sup></p><p class="move">Our suggestion: a short clip, rapport first.</p></div>
   </div>
-  <p class="lede" style="font-size:.72em;text-align:center;opacity:.6;margin-top:1.5vh">Each tab pairs sourced etiquette<sup class="src">[n]</sup> with our own design suggestion (marked "Our suggestion").</p>
+<p class="lede" style="font-size:.72em;text-align:center;opacity:.6;margin-top:1.5vh">Revealed details pair sourced etiquette<sup class="src">[n]</sup> with our own design suggestion (marked "Our suggestion").</p>
   </section>
 
   <section class="slide">
@@ -263,11 +272,11 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
     <img class="illus" data-illus="0" style="max-height:30vh;object-fit:cover" alt="Illustration: a business greeting in a Lagos office (generated illustration, reused from an earlier slide)">
   </div>
-  <div class="tri" style="margin-top:2vh">
-    <div class="tritabs"><button class="on" data-c="gifts">GIFTS</button><button data-c="gen">GENERATIONS</button></div>
-    <div class="col gifts"><div class="flag">GIFTS</div><p class="read">Small and thoughtful: fruit, sweets, chocolates.<sup class="src">[9]</sup></p><p class="read">Give with the right hand or both hands.<sup class="src">[9]</sup></p><p class="read">May be opened later, not on the spot.<sup class="src">[9]</sup></p><p class="read">Kola nut welcome: let the host lead.<sup class="src">[9]</sup></p></div>
-    <div class="col gen"><div class="flag">GENERATIONS</div><p class="read">Elders are Aunty, Uncle, Sir, Ma; hierarchy still decides in the room.<sup class="src">[9]</sup></p><p class="read">We found no cohort studies in these sources - Gen X and Gen Z are US labels.</p><p class="move">Calibrate live: ask your local partner how younger staff expect to work.</p></div>
+    <div class="pick">
+    <div class="pickrow"><button class="on" data-p="gifts"><b>GIFTS</b><span>Small, right-handed, thoughtful</span></button><button data-p="gen"><b>GENERATIONS</b><span>Elders titled; Gen X/Z are US labels</span></button></div>
+    <div class="pickcol on gifts"><p class="read">Small and thoughtful: fruit, sweets, chocolates.<sup class="src">[9]</sup> Give with the right hand or both hands.<sup class="src">[9]</sup> May be opened later, not on the spot.<sup class="src">[9]</sup> Kola nut welcome: let the host lead.<sup class="src">[9]</sup></p></div><div class="pickcol gen"><p class="read">Elders are Aunty, Uncle, Sir, Ma; hierarchy still decides in the room.<sup class="src">[9]</sup> We found no cohort studies in these sources - Gen X and Gen Z are US labels.</p><p class="move">Calibrate live: ask your local partner how younger staff expect to work.</p></div>
   </div>
+
   </section>
 
 <section class="slide">
@@ -357,6 +366,13 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   auds.forEach(function(a){ a.addEventListener('ended',voStop); });
   var illusPool=[].slice.call(document.querySelectorAll('img.illus[src^="data:"]'));
   document.querySelectorAll('img.illus[data-illus]').forEach(function(m){ var p=illusPool[+m.getAttribute('data-illus')||0]; if(p) m.src=p.src; });
+  document.querySelectorAll('.pick').forEach(function(p){
+    var bs=[].slice.call(p.querySelectorAll('.pickrow button')), cs=[].slice.call(p.querySelectorAll('.pickcol'));
+    bs.forEach(function(b){ b.onclick=function(){
+      bs.forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+      cs.forEach(function(c){ c.classList.toggle('on', c.classList.contains(b.dataset.p)); });
+    }; });
+  });
   var qa=new URLSearchParams(location.search);
   document.querySelectorAll('.tri').forEach(function(tri){
     var tabs=[].slice.call(tri.querySelectorAll('.tritabs button')), cols=[].slice.call(tri.querySelectorAll('.col'));
