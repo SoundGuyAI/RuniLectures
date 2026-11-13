@@ -33,14 +33,14 @@ Then review what it produces. The loop that built this kit:
 4. **Review the words.** Read the claims. Anything absolute about a whole nation ("Colombians are...") goes back for a rewrite.
 5. **You own the merge.** Agents propose, humans merge and publish.
 
-## 3. Content rules that keep you honest (and graded well)
+## 3. Content rules that keep you honest
 
 - **Cite per claim.** `[1]` markers on the slide, full URLs on the Sources slide. "Sources: the internet" is not a source.
 - **Tendencies, not verdicts.** Write "meetings often start with conversation" with a source, never "Colombians are indirect." Variation by region, sector, company and person is real; say so.
 - **Scenarios are scenarios.** If a dialogue on a slide is invented to make a point, label it "illustrative scenario."
 - **Ask, check, adapt** is the guardrail, not the lesson. The lesson is the country's specifics: how meetings run, how prices are negotiated, how follow-up actually happens there.
 - **Gifts and officials:** describe what the relevant institutions publish about gift policy, and check with the teaching team. Do not state what is legal or provided as fact.
-- **Disclose AI use.** The assignment requires it, and this kit models it: every page carries a disclosure and marks AI-generated illustrations as generated, not documentary photos.
+- **Disclose AI use.** This kit models it: every page carries a disclosure and marks AI-generated illustrations as generated, not documentary photos.
 
 ## 4. Media
 
@@ -58,7 +58,7 @@ If you want a deck instead of a scrolling page: one bounded slide at a time, nex
 - [ ] Every slide/screenshot inspected at both sizes
 - [ ] Every claim has a source; every source URL opens
 - [ ] Sources slide lists real URLs, and generated media is labeled
-- [ ] AI-use disclosure present (your assignment requires it)
+- [ ] AI-use disclosure present
 - [ ] No absolute claims about whole nations
 - [ ] Your agent opened a PR; a human reviewed and merged it
 
