@@ -141,6 +141,15 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   .comic[data-stage="3"] img{height:11vh}
 }
 
+
+/* click-to-reveal pickers (new slides) */
+.pickrow{display:flex;gap:12px;margin-top:2vh}
+.pickrow button{flex:1;background:var(--panel2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.8em 1em;text-align:left;cursor:pointer;color:var(--ink)}
+.pickrow button b{display:block;letter-spacing:.14em;font-size:clamp(.62rem,1.2vw,.8rem);color:var(--yel)}
+.pickrow button span{display:block;margin-top:.3em;color:var(--muted);font-size:clamp(.68rem,1.4vw,.9rem);line-height:1.35}
+.pickrow button.on{border-color:var(--yel)}
+.pickcol{display:none;margin-top:1.5vh;background:var(--panel2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:clamp(10px,1.6vw,18px)}
+.pickcol.on{display:block}
 </style>
 </head>
 <body>
@@ -285,11 +294,11 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
     <img class="illus" data-illus="1" style="max-height:30vh;object-fit:cover" alt="Illustration: two professionals reviewing a proposal in a Bogota office (generated illustration, reused from an earlier slide)">
   </div>
-  <div class="tri" style="margin-top:2vh">
-    <div class="tritabs"><button class="on" data-c="slides">SLIDES</button><button data-c="handouts">HANDOUTS</button><button data-c="video">VIDEO</button></div>
-    <div class="col slides"><div class="flag">SLIDES</div><p class="read">A polished, professional deck carries weight - image and qualifications matter.<sup class="src">[3]</sup> Warmth first, business second.<sup class="src">[3]</sup></p><p class="move">Our suggestion: a clean visual deck, fully in Spanish.</p></div><div class="col handouts"><div class="flag">HANDOUTS</div><p class="read">EDC cautions against machine translation - translate materials professionally into Spanish.<sup class="src">[1]</sup></p><p class="move">Our suggestion: printed, translated handouts to leave behind.</p></div><div class="col video"><div class="flag">VIDEO</div><p class="read">No source covers video specifically. Meetings can run long, and the decision-maker may join only at the end.<sup class="src">[1]</sup></p><p class="move">Our suggestion: if you use a clip, keep it short and show it after rapport.</p></div>
+    <div class="pick">
+    <div class="pickrow"><button class="on" data-p="slides"><b>SLIDES</b><span>Polished, professional, fully Spanish</span></button><button data-p="handouts"><b>HANDOUTS</b><span>Translated, printed, left behind</span></button><button data-p="video"><b>VIDEO</b><span>Optional, short, after rapport</span></button></div>
+    <div class="pickcol on slides"><p class="read">A polished, professional deck carries weight - image and qualifications matter.<sup class="src">[3]</sup> Warmth first, business second.<sup class="src">[3]</sup> Machine translation is a known pitfall; EDC advises professional Spanish translation.<sup class="src">[1]</sup></p><p class="move">Our suggestion: a clean visual deck, fully in Spanish.</p></div><div class="pickcol handouts"><p class="read">Professionally translated Spanish materials are the safe standard.<sup class="src">[1]</sup> Meetings can run long, and the decision-maker may join only at the end.<sup class="src">[1]</sup></p><p class="move">Our suggestion: printed, translated handouts to leave behind.</p></div><div class="pickcol video"><p class="read">No source covers video specifically.</p><p class="move">Our suggestion: if you use a clip, keep it short and show it after rapport.</p></div>
   </div>
-  <p class="lede" style="font-size:.72em;text-align:center;opacity:.6;margin-top:1.5vh">Each tab pairs sourced etiquette<sup class="src">[n]</sup> with our own design suggestion (marked "Our suggestion").</p>
+<p class="lede" style="font-size:.72em;text-align:center;opacity:.6;margin-top:1.5vh">Revealed details pair sourced etiquette<sup class="src">[n]</sup> with our own design suggestion (marked "Our suggestion").</p>
   </section>
 
   <section class="slide">
@@ -301,11 +310,11 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
     <img class="illus" data-illus="0" style="max-height:30vh;object-fit:cover" alt="Illustration: two professionals shaking hands in a Bogota office (generated illustration, reused from an earlier slide)">
   </div>
-  <div class="tri" style="margin-top:2vh">
-    <div class="tritabs"><button class="on" data-c="gifts">GIFTS</button><button data-c="gen">GENERATIONS</button></div>
-    <div class="col gifts"><div class="flag">GIFTS</div><p class="read">Gifts are mostly social, not routine business.<sup class="src">[3]</sup></p><p class="read">If invited home: fruit, a plant, or quality chocolates.<sup class="src">[3]</sup></p><p class="read">Roses are fine; lilies and marigolds carry funeral associations.<sup class="src">[3]</sup></p><p class="read">Usually opened later, not on the spot.<sup class="src">[3]</sup></p></div>
-    <div class="col gen"><div class="flag">GENERATIONS</div><p class="read">Age and seniority shape decisions; titles run the meeting.<sup class="src">[3]</sup></p><p class="read">We found no cohort studies in these sources - Gen X and Gen Z are US labels.</p><p class="move">Calibrate live: ask your host how their team splits.</p></div>
+    <div class="pick">
+    <div class="pickrow"><button class="on" data-p="gifts"><b>GIFTS</b><span>Social, not routine; if invited home</span></button><button data-p="gen"><b>GENERATIONS</b><span>Seniority leads; Gen X/Z are US labels</span></button></div>
+    <div class="pickcol on gifts"><p class="read">Gifts are mostly social, not routine business.<sup class="src">[3]</sup> If invited home: fruit, a plant, or quality chocolates.<sup class="src">[3]</sup> Roses are fine; lilies and marigolds carry funeral associations.<sup class="src">[3]</sup> Usually opened later, not on the spot.<sup class="src">[3]</sup></p></div><div class="pickcol gen"><p class="read">Age and seniority shape decisions; titles run the meeting.<sup class="src">[3]</sup> We found no cohort studies in these sources - Gen X and Gen Z are US labels.</p><p class="move">Calibrate live: ask your host how their team splits.</p></div>
   </div>
+
   </section>
 
 <section class="slide">
@@ -389,6 +398,13 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   auds.forEach(function(a){ a.addEventListener('ended',voStop); });
   var illusPool=[].slice.call(document.querySelectorAll('img.illus[src^="data:"]'));
   document.querySelectorAll('img.illus[data-illus]').forEach(function(m){ var p=illusPool[+m.getAttribute('data-illus')||0]; if(p) m.src=p.src; });
+  document.querySelectorAll('.pick').forEach(function(p){
+    var bs=[].slice.call(p.querySelectorAll('.pickrow button')), cs=[].slice.call(p.querySelectorAll('.pickcol'));
+    bs.forEach(function(b){ b.onclick=function(){
+      bs.forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+      cs.forEach(function(c){ c.classList.toggle('on', c.classList.contains(b.dataset.p)); });
+    }; });
+  });
   var qa=new URLSearchParams(location.search);
   document.querySelectorAll('.tri').forEach(function(tri){
     var tabs=[].slice.call(tri.querySelectorAll('.tritabs button')), cols=[].slice.call(tri.querySelectorAll('.col'));
