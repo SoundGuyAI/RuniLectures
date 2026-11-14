@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The prompts behind this kit | Business Without Borders</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  :root{--a1:#7c5cff;--a2:#00e0c6}
+  .wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:4vh 6vw 0}
+  section{margin-top:7vh}
+  h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:800;line-height:1.15;margin-bottom:.6rem}
+  .sectag{letter-spacing:.3em;text-transform:uppercase;color:var(--a2);font-size:.72rem;margin-bottom:.8rem}
+  .lead{color:var(--muted);font-size:1rem;max-width:68ch;line-height:1.6}
+  .prompt-item{background:var(--panel);border:1px solid #232c49;border-radius:16px;padding:1.3rem 1.5rem;margin-top:1.1rem}
+  .prompt-quote{border-left:4px solid var(--a1);padding:.2rem 0 .2rem 1.1rem;font-size:1.05rem;line-height:1.55;font-style:italic}
+  .prompt-tag{display:block;font-style:normal;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--a2);margin-bottom:.45rem}
+  .prompt-outcome{margin-top:.8rem;color:var(--muted);font-size:.92rem;line-height:1.55}
+  .prompt-outcome b{color:var(--a2);font-weight:600}
+  ol.steps{counter-reset:step;list-style:none;margin-top:1.4rem;display:grid;gap:1rem}
+  ol.steps li{counter-increment:step;background:var(--panel);border:1px solid #232c49;border-radius:14px;padding:1.1rem 1.3rem 1.1rem 3.6rem;position:relative;color:var(--muted);font-size:.95rem;line-height:1.55}
+  ol.steps li::before{content:counter(step);position:absolute;left:1.1rem;top:1.05rem;width:1.7rem;height:1.7rem;border-radius:50%;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  ol.steps li b{color:var(--ink)}
+  .closing{margin:8vh 0 2vh;color:var(--muted);font-size:.85rem;border-top:1px solid #232c49;padding-top:1.4rem;max-width:68ch;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="blob" style="width:38vw;height:38vw;background:#7c5cff;top:-12vw;right:-10vw;animation:drift 28s ease-in-out infinite alternate"></div>
+<div class="blob" style="width:30vw;height:30vw;background:#00e0c6;bottom:-10vw;left:-8vw;opacity:.18;animation:drift 34s ease-in-out infinite alternate-reverse"></div>
+<nav>
+  <span class="here">Business Without Borders</span>
+  <span class="links"><a href="../">Home</a><a href="../colombia/">Colombia</a><a href="../czech-republic/">Czechia</a><a href="../nigeria/">Nigeria</a><a href="../sri-lanka/">Sri Lanka</a><a href="../ai-tools/">AI workflow</a><a href="../STUDENTS.md">For students</a></span>
+</nav>
+
+<header>
+  <div class="kicker">Runi &middot; AI in practice</div>
+  <h1>The prompts behind this kit</h1>
+  <p class="lede">Every deck, narration and video in this kit began as a message from the instructor. Here are his actual requests, in his own words, typos included, and what each one changed.</p>
+  <div class="hero-chips"><span class="chip">November 12-13, 2026</span><span class="chip">Verbatim quotes, typos included</span><span class="chip">Voice notes paraphrased and labeled</span></div>
+</header>
+
+<div class="wrap">
+<section>
+  <div class="sectag">Where it started</div>
+  <h2>One message, one brief</h2>
+  <p class="lead">On the evening of November 12, 2026, the instructor sent one message that defined the whole project: the course, the four countries, the deliverables, the style, and the way it should be built. From that message, verbatim:</p>
+  <div class="prompt-item"><div class="prompt-quote">&ldquo;make all the presentation interactive sites. with a index page leading to all of them.&rdquo;</div></div>
+  <div class="prompt-item"><div class="prompt-quote">&ldquo;i want the presetations to be fun and juicy and flashing and interactie and not just words or slides. add also voice overs in english. too all presetnations. also make a motoin video for each one of the presentations.&rdquo;</div></div>
+  <div class="prompt-item"><div class="prompt-quote">&ldquo;i want you to document all my prompts and the workflow so the students will know how I use AI agents&rdquo;</div></div>
+  <p class="lead" style="margin-top:1.4rem">That last request is why this page exists. Out of the brief came five decks (Colombia, Czech Republic, Nigeria, Sri Lanka, and the AI workflow session), a narrated motion video for each, an index page, and a repo students can use as a template.</p>
+</section>
+
+<section>
+  <div class="sectag">One night of iteration</div>
+  <h2>Nine more messages, nine changes</h2>
+  <p class="lead">Text in quotes is word for word. Voice notes are paraphrased from their transcripts and labeled.</p>
+
+  <div class="prompt-item">
+    <div class="prompt-quote">&ldquo;Sure. Also I want these presentation to have slides like a presentation . On my phone the ai one looks like a continuous page .&rdquo;</div>
+    <div class="prompt-outcome">The scrolling page became <b>real slide decks</b> with keyboard and swipe navigation.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote">&ldquo;I also want a lot of visual , generate images. Motion graphics in the slides . Animations . Flare&rdquo;</div>
+    <div class="prompt-outcome"><b>Generated art, motion graphics and animation</b> in every deck.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote"><span class="prompt-tag">Voice note, paraphrased</span>The first Colombia draft was too generic. Research each country's culture and make the content specific to it, with culture-related images.</div>
+    <div class="prompt-outcome">Generic advice was replaced by <b>country-specific, source-cited briefings</b>.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote"><span class="prompt-tag">Voice note, paraphrased</span>Emphasize the contrast. Israelis are direct and will cut you off; Americans might be &ldquo;fake polite&rdquo; and say yes without meaning it. How does each destination country compare?</div>
+    <div class="prompt-outcome">The <b>Israel - US - destination contrasts</b> that run through every deck.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote"><span class="prompt-tag">Voice note, paraphrased</span>Add an instructions file for the students' own AI agents, linked from the index page.</div>
+    <div class="prompt-outcome"><b>STUDENTS.md</b>, a build guide in the repo root.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote">&ldquo;What about narration for the Runi slides&rdquo;</div>
+    <div class="prompt-outcome">He chased the feature instead of waiting for it. <b>Narration scripts</b> were written for every slide.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote">&ldquo;Do the voices I wanna hear them don't need to review the texts this time for this one&rdquo;</div>
+    <div class="prompt-outcome">Once the direction was trusted, he skipped the text review. Every deck got <b>per-slide English voice-over</b> with a Listen button.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote">&ldquo;Make sure there is a sound off button to for me to present&rdquo;</div>
+    <div class="prompt-outcome">Playback stays <b>manual, slide by slide</b>, so the presenter controls the room.</div>
+  </div>
+  <div class="prompt-item">
+    <div class="prompt-quote">&ldquo;I looked at Columbia it's nice but maybe add more visuals like images . Maybe the yes slide can be some frames from a comic book&rdquo;</div>
+    <div class="prompt-outcome">Colombia's &ldquo;yes&rdquo; slide became a <b>staged comic</b>: tap to reveal each panel.</div>
+  </div>
+</section>
+
+<section>
+  <div class="sectag">What to notice</div>
+  <h2>How to work like this</h2>
+  <ol class="steps">
+    <li><b>Describe the outcome, not the implementation.</b> &ldquo;Fun and juicy and flashing&rdquo; is a target, not a spec; the agents chose the techniques.</li>
+    <li><b>Review the real thing.</b> Every correction above came from looking at an actual page on his phone, not from planning documents.</li>
+    <li><b>Correct in plain language.</b> &ldquo;Too generic&rdquo;, &ldquo;looks like a continuous page&rdquo;, &ldquo;more visuals&rdquo;: short reactions steer better than long briefs.</li>
+    <li><b>Delegate once the direction is right.</b> When the decks matched his taste, he skipped the text review and let the agents run.</li>
+    <li><b>Document the process itself.</b> This page exists because one of the prompts asked for it.</li>
+  </ol>
+</section>
+
+<p class="closing">Quotes are the instructor's actual messages, word for word, typos included; voice notes are paraphrased and labeled. Page assembled by AI agents from those messages, reviewed and approved by the instructor before joining the course site, November 2026.</p>
+</div>
+
+<footer>Business Without Borders &middot; Reichman University &middot; <a href="../" style="color:var(--muted)">Back to the kit</a></footer>
+<script src="../assets/engine.js"></script>
+</body>
+</html>
