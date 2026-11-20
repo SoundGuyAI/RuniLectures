@@ -393,6 +393,21 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 <audio class="vo" preload="none" data-src="../preview/audio/colombia-7.m4a"></audio>
 <script>
 (function(){
+  /* stagger fix: natural reveal order per list group */
+  (function(){
+    var fams={tick:[0.2,0.3],msg:[0.2,0.6],slot:[0.15,0.15],col:[0.15,0.3],ddi:[0.15,0.2],rcard:[0.12,0.18],shot:[0.12,0.18],lnode:[0.15,0.3],lbar:[0.1,0.12]};
+    Object.keys(fams).forEach(function(cls){
+      var groups=new Map();
+      [].slice.call(document.querySelectorAll('.'+cls)).forEach(function(el){
+        var p=el.parentNode;
+        if(!groups.has(p)) groups.set(p,[]);
+        groups.get(p).push(el);
+      });
+      groups.forEach(function(els){
+        els.forEach(function(el,i){ el.style.transitionDelay=(fams[cls][0]+i*fams[cls][1]).toFixed(2)+'s'; });
+      });
+    });
+  })();
   var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
   var counter=document.getElementById('counter'), prog=document.getElementById('prog');
   function show(n){
