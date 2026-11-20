@@ -127,6 +127,16 @@ h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.1;margin:.25em 0 .2em}
 .renderbar{height:5px;border-radius:3px;background:rgba(255,255,255,.09);overflow:hidden;margin-top:2.2vh}
 .renderbar i{display:block;height:100%;width:30%;border-radius:3px;background:linear-gradient(90deg,transparent,#fcd116,transparent);animation:sweep 3.2s linear infinite}
 @keyframes sweep{from{transform:translateX(-110%)}to{transform:translateX(420%)}}
+
+.phone{background:#0b141a;border-radius:28px;border:3px solid #22303c;max-width:340px;margin:0 auto;
+  padding:18px 14px;display:flex;flex-direction:column;gap:10px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.msg{max-width:85%;padding:.6em .9em;border-radius:14px;font-size:clamp(.72rem,1.7vw,.98rem);line-height:1.35;
+  opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.msg.in{background:#1f2c34;color:#e9edef;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.out{background:#005c4b;color:#eafff5;align-self:flex-end;border-bottom-right-radius:4px}
+.slide.active .msg{opacity:1;transform:none}
+.msg:nth-child(1){transition-delay:.2s}.msg:nth-child(2){transition-delay:.8s}
+.msg:nth-child(3){transition-delay:1.4s}.msg:nth-child(4){transition-delay:2s}
 </style>
 </head>
 <body>
@@ -298,7 +308,25 @@ h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.1;margin:.25em 0 .2em}
 <section class="slide">
   <div class="split">
     <div>
-      <div class="kicker">05 - Rules of the loop</div>
+      <div class="kicker">05 - Changes on the spot</div>
+      <h2>Prompted from the audience</h2>
+      <p class="lede">This morning's intro talk mentioned a list of meeting do's and don'ts. One WhatsApp message from the audience, and all four country decks grew a Do &amp; Don't slide - researched, sourced and shipped to the course preview while the talk was still running.</p>
+      <p class="lede">That is the flexibility of working with an agent: no spec, no ticket, no developer queue. You describe the change in plain language, the agent does the work, you approve the result. Nothing ships without your yes.</p>
+      <div class="badge">Sent Nov 20, 09:08 - mid-lecture, from the audience</div>
+      <p class="lede" style="margin-top:1em;font-size:.85em">Full prompt log: <a href="../prompts/" style="color:var(--blue)">the prompts behind this kit</a>.</p>
+    </div>
+    <div class="phone">
+      <div class="msg in">I'm in RUNI and I am listening to the intro talk; and it makes me want to make changes to the 4 slides decks of the countries</div>
+      <div class="msg in">Add a do and don't to each country presentation.</div>
+      <div class="msg out">Done - a "Do this. Not that." slide is now live in all four country decks, each item sourced.</div>
+    </div>
+  </div>
+</section>
+
+  <section class="slide">
+  <div class="split">
+    <div>
+      <div class="kicker">06 - Rules of the loop</div>
       <h2>Workflow, not gambling</h2>
       <div class="tick">Sources or it didn't happen. Verification is your job.</div>
       <div class="tick">Disclose the AI. Professionalism, not confession.</div>
@@ -313,7 +341,7 @@ h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.1;margin:.25em 0 .2em}
 <section class="slide">
   <div class="split">
     <div>
-      <div class="kicker">06 - Your turn</div>
+      <div class="kicker">07 - Your turn</div>
       <h2>Run the same loop for your clip</h2>
       <div class="ostep" style="transition-delay:.12s"><span class="num">1</span><span><b>Brief</b> - one message: audience, country, three cultural points, tone, length.</span></div>
       <div class="ostep" style="transition-delay:.34s"><span class="num">2</span><span><b>Research</b> - credible sources first; paste them into your prompt.</span></div>
@@ -355,7 +383,8 @@ h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.1;margin:.25em 0 .2em}
   <button id="prev" aria-label="Previous slide">&larr;</button>
   <button id="next" aria-label="Next slide">&rarr;</button>
 </div>
-<audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none">
+<audio class="vo" preload="none"></audio></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio><audio class="vo" preload="none"></audio>
 <script>
 (function(){
   var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
