@@ -116,6 +116,30 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 .srclist p{font-size:clamp(.66rem,1.35vw,.92rem);margin:0;line-height:1.4}
 .srclist p:last-child{grid-column:1/-1}
 @media (max-width:820px){.srclist{grid-template-columns:1fr}}
+
+
+/* click-to-reveal pickers (new slides) */
+.pickrow{display:flex;gap:12px;margin-top:2vh}
+.pickrow button{flex:1;background:var(--panel2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.8em 1em;text-align:left;cursor:pointer;color:var(--ink)}
+.pickrow button b{display:block;letter-spacing:.14em;font-size:clamp(.62rem,1.2vw,.8rem);color:var(--yel)}
+.pickrow button span{display:block;margin-top:.3em;color:var(--muted);font-size:clamp(.68rem,1.4vw,.9rem);line-height:1.35}
+.pickrow button.on{border-color:var(--yel)}
+.pickcol{display:none;margin-top:1.5vh;background:var(--panel2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:clamp(10px,1.6vw,18px)}
+.pickcol.on{display:block}
+
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,24px);margin-top:1.6vh}
+.ddcol{background:var(--panel);border:1px solid #22315a;border-radius:16px;padding:clamp(10px,1.5vw,20px)}
+.ddh{font-weight:800;letter-spacing:.2em;font-size:clamp(.72rem,1.5vw,.95rem);margin-bottom:.5em}
+.ddcol.do .ddh{color:var(--green)}
+.ddcol.dont .ddh{color:var(--red)}
+.ddi{display:flex;gap:.55em;align-items:flex-start;margin:.4em 0;font-size:clamp(.78rem,1.55vw,1.02rem);line-height:1.38;opacity:0;transform:translateY(14px);transition:opacity .4s ease,transform .4s ease}
+.slide.active .ddi{opacity:1;transform:none}
+.ddcol .ddi:nth-child(2){transition-delay:.15s}.ddcol .ddi:nth-child(3){transition-delay:.3s}
+.ddcol .ddi:nth-child(4){transition-delay:.45s}.ddcol .ddi:nth-child(5){transition-delay:.6s}
+.ddi::before{flex:0 0 auto;font-weight:800}
+.do .ddi::before{content:"\2713";color:var(--green)}
+.dont .ddi::before{content:"\2717";color:var(--red)}
+@media (max-width:820px){.dd{grid-template-columns:1fr;gap:10px}}
 </style>
 </head>
 <body>
@@ -237,6 +261,60 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
     </div>
   </section>
 
+      <section class="slide">
+  <div class="split">
+    <div>
+      <div class="kicker">Field guide - In the room</div>
+      <h2>How to present in Nigeria</h2>
+      <p class="lede">The relationship presents first. Your deck comes second.<sup class="src">[9]</sup></p>
+    </div>
+    <img class="illus" data-illus="0" style="max-height:30vh;object-fit:cover" alt="Illustration: a business greeting in a Lagos office (generated illustration, reused from an earlier slide)">
+  </div>
+    <div class="pick">
+    <div class="pickrow"><button class="on" data-p="slides"><b>SLIDES</b><span>After the greetings, with titles</span></button><button data-p="handouts"><b>HANDOUTS</b><span>Right hand, quality print</span></button><button data-p="video"><b>VIDEO</b><span>Short clip, rapport first</span></button></div>
+    <div class="pickcol on slides"><p class="read">Greetings come first - family, journey, then the agenda.<sup class="src">[9]</sup> Titles matter: Chief, Doctor, Engineer, Alhaji, Pastor.<sup class="src">[9]</sup></p><p class="move">Our suggestion: the deck after pleasantries, titles on the cover.</p></div><div class="pickcol handouts"><p class="read">Exchange anything with the right hand or both hands.<sup class="src">[9]</sup> Dressing well shows respect.<sup class="src">[9]</sup></p><p class="move">Our suggestion: a right-hand handout, quality print.</p></div><div class="pickcol video"><p class="read">No source covers video specifically. Lagos and Kano differ - one script does not fit the country.<sup class="src">[9]</sup></p><p class="move">Our suggestion: a short clip, rapport first.</p></div>
+  </div>
+<p class="lede" style="font-size:.72em;text-align:center;opacity:.6;margin-top:1.5vh">Revealed details pair sourced etiquette<sup class="src">[n]</sup> with our own design suggestion (marked "Our suggestion").</p>
+  </section>
+
+  <section class="slide">
+  <div class="split">
+    <div>
+      <div class="kicker">Field guide - Gifts and generations</div>
+      <h2>Gifts, and who is in the room</h2>
+      <p class="lede">Small, thoughtful, right-handed.<sup class="src">[9]</sup></p>
+    </div>
+    <img class="illus" data-illus="0" style="max-height:30vh;object-fit:cover" alt="Illustration: a business greeting in a Lagos office (generated illustration, reused from an earlier slide)">
+  </div>
+    <div class="pick">
+    <div class="pickrow"><button class="on" data-p="gifts"><b>GIFTS</b><span>Small, right-handed, thoughtful</span></button><button data-p="gen"><b>GENERATIONS</b><span>Age is social capital; cohorts debated locally</span></button></div>
+    <div class="pickcol on gifts"><p class="read">Small and thoughtful: fruit, sweets, chocolates.<sup class="src">[9]</sup> Give with the right hand or both hands.<sup class="src">[9]</sup> May be opened later, not on the spot.<sup class="src">[9]</sup> Kola nut welcome: let the host lead.<sup class="src">[9]</sup></p></div><div class="pickcol gen"><p class="read">Elders are Aunty, Uncle, Sir, Ma; hierarchy still decides in the room.<sup class="src">[9]</sup> Age carries social capital - deference to elders shapes workplace dynamics.<sup class="src">[10]</sup> Nigerian outlets and researchers debate a Gen Z / old-guard values gap.<sup class="src">[11]</sup> Some "generational" gaps are age or life-stage effects, not fixed cohort traits.<sup class="src">[12]</sup></p><p class="move">Calibrate live: ask your local partner how younger staff expect to work.</p></div>
+  </div>
+
+  </section>
+
+<section class="slide dense">
+    <div class="kicker">Quick reference - In the meeting</div>
+    <h2>Greet first. Deal later.</h2>
+    <div class="dd">
+      <div class="ddcol do">
+        <div class="ddh">DO</div>
+        <div class="ddi">Greet first - ask about the family, the night, the journey<sup class="src">[2][4]</sup></div>
+        <div class="ddi">Address the most senior person first - titles carry weight<sup class="src">[4][9]</sup></div>
+        <div class="ddi">Bargain - the negotiation is part of the relationship<sup class="src">[1][2]</sup></div>
+        <div class="ddi">Stay warm when the meeting pauses for calls and visitors<sup class="src">[2]</sup></div>
+      </div>
+      <div class="ddcol dont">
+        <div class="ddh">DON'T</div>
+        <div class="ddi">Rush the greeting or open with your agenda<sup class="src">[2][4]</sup></div>
+        <div class="ddi">Give, receive or eat with the left hand<sup class="src">[4][9]</sup></div>
+        <div class="ddi">Force a "no" - refusal often comes wrapped in courtesy<sup class="src">[5]</sup></div>
+        <div class="ddi">Show anger in the room - public face matters<sup class="src">[2][5]</sup></div>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:1.6vh;font-size:.8em">Prompted by the intro talk's do-and-don't list; full sources on the final slide.</p>
+  </section>
+
   <section class="slide">
     <div class="kicker">Sources and method</div>
     <h2>Where this comes from</h2>
@@ -249,7 +327,11 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
       <p class="lede"><b style="color:var(--ink)">[6] Tel Aviv-Yafo Municipality</b> - "Business Culture in Israel": straightforwardness, interruptions as enthusiasm. tel-aviv.gov.il</p>
       <p class="lede"><b style="color:var(--ink)">[7] INSEAD Knowledge</b> - "The Pitfalls of Giving Feedback Across Cultures" (2023). knowledge.insead.edu</p>
       <p class="lede"><b style="color:var(--ink)">[8] U.S. International Trade Administration</b> - Nigeria: Market Challenges, and Distribution &amp; Sales Channels (2025). trade.gov</p>
-      <p class="lede" style="color:var(--muted)">Nigeria holds 250+ cultural groups and 500+ languages; customs vary by region, religion, sector and organization. Verify before you act. Illustrations are AI-generated for the course and labeled as such.</p>
+      <p class="lede"><b style="color:var(--ink)">[9] Commisceo Global</b> - Nigeria Country Guide: greetings, titles, hierarchy, gift giving. commisceo-global.com</p>
+            <p class="lede"><b style="color:var(--ink)">[10] Nwoko, O. B. - "Too Young to Lead? Navigating Age, Respect, and Hierarchies in the Nigerian Workplace"</b> - chapter in the open textbook Intercultural Encounters (teaching case study drawing on Nigerian workplace studies; age as social capital). raider.pressbooks.pub</p>
+      <p class="lede"><b style="color:var(--ink)">[11] Sule et al. (2025), IIARD Int. Journal of Economics and Business Management</b> - review of intergenerational work values in Nigerian private organisations; plus Aigbona (2026), The Punch (opinion): "Bridging value gap between Gen Z and old guard". iiardjournals.org, punchng.com</p>
+      <p class="lede"><b style="color:var(--ink)">[12] Rudolph, Rauvola, Costanza &amp; Zacher (2020)</b> - "Generations and Generational Differences: Debunking Myths": labels and year ranges vary by study and location; many claimed effects are age or period effects. pmc.ncbi.nlm.nih.gov/articles/PMC7471586/</p>
+<p class="lede" style="color:var(--muted)">Nigeria holds 250+ cultural groups and 500+ languages; customs vary by region, religion, sector and organization. Verify before you act. Illustrations are AI-generated for the course and labeled as such.</p>
     </div>
   </section>
 
@@ -267,17 +349,36 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 <audio class="vo" preload="none"></audio>
 <audio class="vo" preload="none"></audio>
 <audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
 
 
 
 <script>
 (function(){
+  /* stagger fix: natural reveal order per list group */
+  (function(){
+    var fams={tick:[0.2,0.3],msg:[0.2,0.6],slot:[0.15,0.15],col:[0.15,0.3],ddi:[0.15,0.2],rcard:[0.12,0.18],shot:[0.12,0.18],lnode:[0.15,0.3],lbar:[0.1,0.12]};
+    Object.keys(fams).forEach(function(cls){
+      var groups=new Map();
+      [].slice.call(document.querySelectorAll('.'+cls)).forEach(function(el){
+        var p=el.parentNode;
+        if(!groups.has(p)) groups.set(p,[]);
+        groups.get(p).push(el);
+      });
+      groups.forEach(function(els){
+        els.forEach(function(el,i){ el.style.transitionDelay=(fams[cls][0]+i*fams[cls][1]).toFixed(2)+'s'; });
+      });
+    });
+  })();
   var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
   var counter=document.getElementById('counter'), prog=document.getElementById('prog');
   function show(n){
     slides[i].classList.remove('active');
     i=Math.max(0,Math.min(slides.length-1,n));
     slides[i].classList.add('active');
+    voBtn.style.display=(typeof auds!=='undefined'&&auds[i]&&auds[i].getAttribute('data-src'))?'':'none';
     voStop();
     counter.textContent=(i+1)+' / '+slides.length;
     prog.style.width=((i)/(slides.length-1)*100)+'%';
@@ -299,7 +400,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   }
   var clipsP=null;
   function loadClips(){
-    if(!clipsP){ clipsP=fetch('../preview/audio/nigeria.json').then(function(r){ if(!r.ok)throw new Error('http '+r.status); return r.json(); }).then(function(j){ return j.clips; }); }
+    if(!clipsP){ clipsP=fetch('audio/nigeria.json').then(function(r){ if(!r.ok)throw new Error('http '+r.status); return r.json(); }).then(function(j){ return j.clips; }); }
     return clipsP;
   }
   voBtn.onclick=function(){
@@ -312,12 +413,21 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
       var t=clips[i]; if(!t)throw new Error('no clip');
       var bin=atob(t.replace(/\s+/g,'')), bytes=new Uint8Array(bin.length);
       for(var k=0;k<bin.length;k++)bytes[k]=bin.charCodeAt(k);
-      a.src=URL.createObjectURL(new Blob([bytes],{type:'../preview/audio/mp4'}));
+      a.src=URL.createObjectURL(new Blob([bytes],{type:'audio/mp4'}));
       voPlay();
     })
     .catch(function(){ voStop(); voBtn.innerHTML='Audio unavailable'; });
   };
   auds.forEach(function(a){ a.addEventListener('ended',voStop); });
+  var illusPool=[].slice.call(document.querySelectorAll('img.illus[src^="data:"]'));
+  document.querySelectorAll('img.illus[data-illus]').forEach(function(m){ var p=illusPool[+m.getAttribute('data-illus')||0]; if(p) m.src=p.src; });
+  document.querySelectorAll('.pick').forEach(function(p){
+    var bs=[].slice.call(p.querySelectorAll('.pickrow button')), cs=[].slice.call(p.querySelectorAll('.pickcol'));
+    bs.forEach(function(b){ b.onclick=function(){
+      bs.forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+      cs.forEach(function(c){ c.classList.toggle('on', c.classList.contains(b.dataset.p)); });
+    }; });
+  });
   var qa=new URLSearchParams(location.search);
   document.querySelectorAll('.tri').forEach(function(tri){
     var tabs=[].slice.call(tri.querySelectorAll('.tritabs button')), cols=[].slice.call(tri.querySelectorAll('.col'));
