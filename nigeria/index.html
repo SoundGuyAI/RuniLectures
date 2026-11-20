@@ -400,7 +400,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
   }
   var clipsP=null;
   function loadClips(){
-    if(!clipsP){ clipsP=fetch('audio/nigeria.json').then(function(r){ if(!r.ok)throw new Error('http '+r.status); return r.json(); }).then(function(j){ return j.clips; }); }
+    if(!clipsP){ clipsP=fetch('../preview/audio/nigeria.json').then(function(r){ if(!r.ok)throw new Error('http '+r.status); return r.json(); }).then(function(j){ return j.clips; }); }
     return clipsP;
   }
   voBtn.onclick=function(){
