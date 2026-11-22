@@ -16,6 +16,12 @@ h1{font-size:clamp(2rem,5.6vw,4.2rem);line-height:1.05;margin:.4em 0 .3em}
 h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.1;margin:.25em 0 .2em}
 .sub{color:var(--muted);font-size:clamp(.9rem,1.8vw,1.2rem);max-width:64ch;line-height:1.45}
 .badge{display:inline-block;background:rgba(252,209,22,.14);color:var(--yel);border:1px solid rgba(252,209,22,.4);border-radius:999px;padding:.35em 1em;font-size:clamp(.7rem,1.4vw,.95rem);font-weight:700;margin-top:1.2em}
+.coursearc{display:flex;flex-wrap:wrap;gap:.45em;margin-top:1.1em}
+.coursearc span{background:var(--panel2);border:1px solid #22315a;border-radius:999px;padding:.35em .85em;color:var(--muted);font-size:clamp(.62rem,1.2vw,.8rem);font-weight:700}
+.advantage{color:var(--ink);font-size:clamp(.92rem,1.8vw,1.18rem);line-height:1.45;max-width:64ch;margin:.3em 0 1em}
+.lede{color:var(--muted);font-size:clamp(.9rem,1.8vw,1.18rem);line-height:1.45;max-width:64ch}
+.move{font-size:clamp(1rem,2vw,1.35rem);font-weight:800;color:var(--yel);line-height:1.35}
+.caution{margin-top:1.4em;background:rgba(255,200,87,.1);border:1px solid rgba(255,200,87,.4);border-left:4px solid var(--warn);border-radius:14px;padding:.9em 1.1em;color:#f4df9f;font-size:clamp(.78rem,1.5vw,.98rem);line-height:1.45;max-width:62ch}
 .split{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5vw;align-items:center}
 .hintline{margin-top:1.6vh;color:var(--muted);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.8}
 /* hero image with slow zoom and click-to-read overlay */
@@ -195,6 +201,7 @@ a.urlbadge:hover{border-color:var(--yel)}
       <h1>The AI<br><span style="color:var(--yel)">Workflow</span></h1>
       <p class="sub">Research, copy, design, code, repo - every asset in this kit was produced by AI agents steered by a human.</p>
       <span class="badge">You are the editor-in-chief</span>
+      <div class="coursearc" aria-label="Course arc"><span>1. Observe diplomats</span><span>2. Add AI resources</span><span>3. Compare, mentor, take away</span></div>
     </div>
     <div class="hero" data-hero>
       <img data-kit-asset="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Illustration: a human editor directing small robot agents">
@@ -214,6 +221,7 @@ a.urlbadge:hover{border-color:var(--yel)}
 <section class="slide">
   <div class="kicker">01 - The shift</div>
   <h2>From answers to agents</h2>
+  <p class="advantage">Culture prep is a competitive advantage. AI shortens the path from source to judgment.</p>
   <div class="hero" data-hero>
     <img data-kit-asset="1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Then: copying from a chatbot. Now: directing a team of agents">
     <div class="cap">
@@ -462,6 +470,7 @@ a.urlbadge:hover{border-color:var(--yel)}
       <h2><span style="color:var(--blue)">Flattened.</span></h2>
       <p class="lede">The diplomats qualify by generation, region and company age. The AI turns "it depends" into portable rules.</p>
       <p class="move" style="margin-top:2vh">Use the AI briefing as the draft. Let the human source correct it.</p>
+      <p class="caution">Course etiquette drill: 14/15 can still fail the meeting. One wrong norm is enough; verify the behavior-changing details.</p>
     </div>
     <img class="sideimg" data-kit-asset="17" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Illustration: a rich detailed landscape being pressed flat into a uniform blue sheet by a giant press">
   </div>
@@ -504,10 +513,10 @@ a.urlbadge:hover{border-color:var(--yel)}
       <div class="ostep"><span class="num">5</span><span><b>Verify and disclose</b> - check claims, watch the final render, add an AI-use note.</span></div>
       <div class="lbl2">Before you prompt - Tool #1: read between the lines</div>
       <p class="mini">Feed an agent the diplomat's deck plus your notes, and ask for:</p>
-      <div class="chips"><span>dress code</span><span>chosen focus areas</span><span>history vs. culture portion</span><span>deck style and color</span><span>lecturing style</span><span>Q&amp;A handling</span><span>mingling before/after</span><span>delegation makeup</span></div>
+      <div class="chips"><span>dress code</span><span>chosen focus areas</span><span>history vs. culture portion</span><span>slide style</span><span>color use</span><span>lecture posture</span><span>Q&amp;A handling</span><span>pre/post mingling</span><span>solo vs. delegation</span><span>other small details</span></div>
       <div class="lbl2">Tool #2: the thank-you ceremony</div>
       <p class="mini">The country briefings in this kit cover gift norms. Ask your agent for culturally safe gift ideas for your target country, then verify before you buy anything.</p>
-      <p class="read">Attribution: this assignment workflow follows the course's "same loop" asset method (Oded Sharon, 2025), applied here to the clip you will produce.</p>
+      <p class="read">Attribution: Tool #1 adapts the course's observation framework; the clip workflow follows the course's same-loop method.</p>
     </div>
     <img class="sideimg" data-kit-asset="19" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Illustration: a student director with robots filming a scene on a phone">
   </div>
@@ -535,7 +544,7 @@ a.urlbadge:hover{border-color:var(--yel)}
         <p><b>[10]</b> Remotion (official page) - remotion.dev</p>
         <p><b>[11]</b> HyperFrames (official page) - hyperframes.heygen.com</p>
         <p>The course source bar: the expected bibliography for the culture work includes the CIA World Factbook, the GLOBE project, "Kiss, Bow, or Shake Hands" and "Bridge the Culture Gaps". When you prompt for culture content, demand named sources of that quality, then check them.</p>
-        <p>Method: tool descriptions come from each tool's own official page; screenshots were taken on those pages on Nov 13, 2026. No pricing or version claims, because those change. Illustrations are AI-generated for this session. This session was researched, written and built by AI agents steered by a human, and reviewed on real renders - the loop, applied to itself.</p>
+        <p>Method: tool descriptions come from each tool's own official page; screenshots were taken on those pages on Nov 13, 2026. No pricing or version claims, because those change. Illustrations are AI-generated for this session. Course-arc, etiquette-drill and observation-framework updates are paraphrased from the course-intro reference, without reproduced slides or presenter names. This session was researched, written and built by AI agents steered by a human, and reviewed on real renders - the loop, applied to itself.</p>
       </div>
     </div>
     <img class="sideimg loopreuse" alt="Illustration: robots working around a circular workflow">
@@ -686,4 +695,4 @@ a.urlbadge:hover{border-color:var(--yel)}
 })();
 </script>
 <script>fetch('https://raw.githubusercontent.com/SoundGuyAI/RuniLectures/53594ceb435ac9329726db3c4e7607aa7776b7fe/ai-tools/index.html').then(function(r){return r.text()}).then(function(t){var doc=new DOMParser().parseFromString(t,'text/html'),a=[];doc.querySelectorAll('img[src^="data:image/"]').forEach(function(im){if(a.indexOf(im.src)<0)a.push(im.src)});document.querySelectorAll('img[data-kit-asset]').forEach(function(im){im.src=a[+im.dataset.kitAsset];});var pool=[].slice.call(document.querySelectorAll('img.illus[data-kit-asset]'));document.querySelectorAll('img.illus[data-illus]').forEach(function(im){var src=pool[+im.dataset.illus||0];if(src)im.src=src.src;});});</script></body>
-</html>
+  </html>
