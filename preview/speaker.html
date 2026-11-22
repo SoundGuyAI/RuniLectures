@@ -13,6 +13,7 @@ html,body{height:100%;background:var(--bg);color:var(--ink);font-family:'Segoe U
 .slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .5s ease,transform .5s ease,visibility 0s}
 .kicker{color:var(--yel);letter-spacing:.28em;text-transform:uppercase;font-weight:700;font-size:clamp(.7rem,1.5vw,.95rem)}
 h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin:.35em 0 .25em}
+.mba{font-size:.42em;color:var(--ink);font-weight:800;letter-spacing:.02em;margin-left:.18em;white-space:nowrap}
 h2{font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.05;margin:.25em 0 .35em}
 .sub{color:var(--muted);font-size:clamp(.95rem,1.9vw,1.3rem);max-width:58ch;line-height:1.45}
 .split{display:grid;grid-template-columns:1fr .82fr;gap:4vw;align-items:center}
@@ -69,6 +70,10 @@ h2{font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.05;margin:.25em 0 .35em}
 .nav{position:fixed;bottom:3.2vh;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:center;z-index:10}
 .nav button{background:var(--panel2);color:var(--ink);border:1px solid #2c3a5f;border-radius:999px;width:56px;height:56px;font-size:1.3rem;cursor:pointer;transition:transform .15s,background .15s}
 .nav button:hover{background:#22315a;transform:scale(1.06)}
+.voBtn{position:fixed;bottom:4vh;right:4vw;z-index:20;background:var(--panel2);color:var(--ink);border:1px solid #2c3a5f;border-radius:999px;padding:.7em 1.2em;font-weight:700;font-size:clamp(.8rem,1.6vw,1rem);cursor:pointer;font-family:inherit}
+.voBtn.playing{border-color:var(--yel);color:var(--yel)}
+.voBtn.pending{opacity:.72;cursor:default}
+.voBtn:disabled{opacity:.72;cursor:default}
 .counter{position:fixed;top:3vh;right:3vw;color:var(--muted);font-weight:700;font-size:clamp(.8rem,1.7vw,1.05rem);z-index:10}
 .brand{position:fixed;top:3vh;left:3vw;color:var(--muted);font-weight:700;z-index:10;letter-spacing:.04em}
 .progress{position:fixed;top:0;left:0;height:4px;background:var(--yel);width:0;transition:width .5s ease;z-index:11}
@@ -87,6 +92,7 @@ h2{font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.05;margin:.25em 0 .35em}
 <body>
 <div class="progress" id="prog"></div>
 <div class="brand">Business Without Borders</div>
+<button class="voBtn pending" id="voBtn" type="button" aria-label="Play narration for this slide" disabled>Narration pending</button>
 <div class="counter" id="counter">1 / 7</div>
 <main class="deck" id="deck">
 
@@ -94,7 +100,7 @@ h2{font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.05;margin:.25em 0 .35em}
   <div class="split">
     <div>
       <div class="kicker">Meet the speaker</div>
-      <h1>Oded<br><span style="color:var(--yel)">Sharon</span></h1>
+      <h1>Oded<br><span style="color:var(--yel)">Sharon</span><span class="mba">, MBA</span></h1>
       <p class="sub">Game developer, XR creator and lecturer. He builds narrative games, mixed-reality experiences and practical AI-agent workflows.</p>
       <span class="badge">Games - XR - AI agents</span>
     </div>
@@ -179,34 +185,93 @@ h2{font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.05;margin:.25em 0 .35em}
     <div class="grid g3" style="margin-top:0">
       <div class="card"><span class="img"><img src="https://soundguyai.github.io/CodexTalkOct26/assets/about/oded-maker.jpg" alt="Oded making a project"></span></div>
       <div class="card"><span class="img"><img src="https://soundguyai.github.io/CodexTalkOct26/assets/about/burning-man-sculpture.jpg" alt="Burning Man sculpture at night"></span></div>
-      <div class="card"><span class="img"><img src="assets/oded-event-photo.svg" alt="Oded with friends at an evening event"></span></div>
+      <div class="card"><span class="img"><img src="../speaker/assets/oded-event-photo.svg" alt="Oded with friends at an evening event"></span></div>
     </div>
   </div>
   <p class="source">Sources: Oded's public CodexTalk deck and reviewed about-me material. Images are linked from public project assets; one event photo was supplied by Oded for this speaker profile.</p>
 </section>
 
 </main>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
+<audio class="vo" preload="none"></audio>
 <div class="nav" aria-label="Slide navigation"><button id="prev" type="button" aria-label="Previous slide">&larr;</button><button id="next" type="button" aria-label="Next slide">&rarr;</button></div>
 <script>
 const slides=[...document.querySelectorAll('.slide')];
 const counter=document.getElementById('counter');
 const prog=document.getElementById('prog');
-let i=0;
+const voBtn=document.getElementById('voBtn');
+const auds=[...document.querySelectorAll('audio.vo')];
+const CLIP_PARTS=[
+  '/RuniLectures/preview/audio/speaker-part00.json',
+  '/RuniLectures/preview/audio/speaker-part01.json',
+  '/RuniLectures/preview/audio/speaker-part02.json',
+  '/RuniLectures/preview/audio/speaker-part03.json',
+  '/RuniLectures/preview/audio/speaker-part04.json',
+  '/RuniLectures/preview/audio/speaker-part05.json'
+];
+let i=0,playing=false,voReady=false,clipsP=null,sx=0;
+function voStop(){
+  auds.forEach(a=>{a.pause();a.currentTime=0});
+  playing=false;
+  voBtn.classList.remove('playing');
+  voBtn.innerHTML=voReady?'&#9654; Listen':'Narration pending';
+}
 function show(n){
   i=Math.max(0,Math.min(slides.length-1,n));
   slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+  voStop();
   counter.textContent=(i+1)+' / '+slides.length;
   prog.style.width=((i+1)/slides.length*100)+'%';
 }
+function loadClips(){
+  if(!clipsP){
+    clipsP=Promise.all(CLIP_PARTS.map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}))).then(parts=>JSON.parse(parts.join('')).clips);
+  }
+  return clipsP;
+}
+function voPlay(){
+  const a=auds[i];if(!a)return;
+  const p=a.play();if(p&&p.catch)p.catch(()=>voStop());
+  playing=true;voBtn.classList.add('playing');voBtn.innerHTML='&#10074;&#10074; Pause';
+}
+fetch(CLIP_PARTS[0],{method:'HEAD',cache:'no-store'}).then(r=>{
+  if(!r.ok)return;
+  voReady=true;
+  voBtn.disabled=false;
+  voBtn.classList.remove('pending');
+  voBtn.innerHTML='&#9654; Listen';
+}).catch(()=>{});
+voBtn.addEventListener('click',()=>{
+  if(!voReady)return;
+  if(playing){voStop();return}
+  voStop();
+  const a=auds[i];if(!a)return;
+  if(a.getAttribute('src')){voPlay();return}
+  const selected=i;
+  voBtn.innerHTML='Loading&hellip;';
+  loadClips().then(clips=>{
+    const t=clips[selected];if(!t)throw new Error('no clip');
+    const bin=atob(t.replace(/\s+/g,'')),bytes=new Uint8Array(bin.length);
+    for(let k=0;k<bin.length;k++)bytes[k]=bin.charCodeAt(k);
+    a.src=URL.createObjectURL(new Blob([bytes],{type:'audio/mpeg'}));
+    if(i===selected)voPlay();
+  }).catch(()=>{voStop();voBtn.innerHTML='Audio unavailable'});
+});
+auds.forEach(a=>a.addEventListener('ended',voStop));
 document.getElementById('prev').addEventListener('click',()=>show(i-1));
 document.getElementById('next').addEventListener('click',()=>show(i+1));
 document.addEventListener('keydown',e=>{
+  if(e.target&&e.target.tagName==='BUTTON'&&(e.key===' '||e.key==='Enter'))return;
   if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}
   if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}
   if(e.key==='Home')show(0);
   if(e.key==='End')show(slides.length-1);
 });
-let sx=0;
 document.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX},{passive:true});
 document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(i+(dx<0?1:-1))},{passive:true});
 document.querySelectorAll('.card button').forEach(btn=>btn.addEventListener('click',()=>btn.closest('.card').classList.toggle('open')));
