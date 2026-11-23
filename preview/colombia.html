@@ -115,7 +115,8 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
 .srclist{display:grid;grid-template-columns:1fr 1fr;gap:.8em 2em;max-width:none}
 .srclist p{font-size:clamp(.66rem,1.35vw,.92rem);margin:0;line-height:1.4}
 .srclist p:last-child{grid-column:1/-1}
-@media (max-width:820px){.srclist{grid-template-columns:1fr}}
+.srclist a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:2px}
+@media (max-width:820px){.srclist{grid-template-columns:1fr}.deck .slide:last-of-type .srclist{gap:.45em 1em}.deck .slide:last-of-type .srclist p{font-size:.56rem;line-height:1.25}.deck .slide:last-of-type h1{font-size:clamp(1.45rem,7vw,2.2rem)}}
 
 
 .comic{display:flex;gap:3vw;margin:8px 0;justify-content:center;align-items:center;cursor:pointer}
@@ -367,6 +368,7 @@ h2{font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1.1;margin:.3em 0 .4em}
       <p class="lede"><b style="color:var(--ink)">[8] Tel Aviv-Yafo Municipality</b> - "Business Culture in Israel": informality, and interruptions read as engagement. tel-aviv.gov.il</p>
             <p class="lede"><b style="color:var(--ink)">[9] Monsalve Castro, L. C. (2023), Universidad Autonoma de Bucaramanga (UNAB)</b> - "Diferencias generacionales en los valores de trabajo: Caso Santander" (Spanish book; 519 workers in Santander; work values by Gen X, millennial and Gen Z cohort). doi.org/10.29375/9786289578720</p>
       <p class="lede"><b style="color:var(--ink)">[10] Rudolph, Rauvola, Costanza &amp; Zacher (2020)</b> - "Generations and Generational Differences: Debunking Myths": labels and year ranges vary by study and location; many claimed effects are age or period effects. pmc.ncbi.nlm.nih.gov/articles/PMC7471586/</p>
+      <p class="lede"><b style="color:var(--ink)">[11] GLOBE Project + CIA World Factbook</b> - <a href="https://globeproject.com/results/countries/COL%3Fmenu=list.html" target="_blank" rel="noopener">Colombia GLOBE results</a>; <a href="https://thefactbook.org/colombia" target="_blank" rel="noopener">archived CIA country profile</a>. The <a href="https://www.cia.gov/the-world-factbook/" target="_blank" rel="noopener">official CIA page</a> says the Factbook has sunset.</p>
       <p class="lede" style="color:var(--muted)">Illustrations in this briefing are AI-generated for the course and labeled as such - they are not documentary photos. Customs vary by region, sector and company: verify before you act.</p>
     </div>
   </section>
