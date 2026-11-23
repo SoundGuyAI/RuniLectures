@@ -176,9 +176,13 @@ h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.1;margin:.25em 0 .2em}
 .qrwrap img{width:100%;display:block}
 .qrcap{color:#0b1220;font-weight:800;font-size:clamp(.7rem,1.4vw,.9rem);margin-top:.6em;letter-spacing:.04em}
 @media (max-width:960px){.tri3{grid-template-columns:1fr}.vtiles{grid-template-columns:1fr 1fr}.segbar{flex-direction:column}.qrwrap{max-width:min(300px,80%)}}
+@media (max-width:820px){.assignment2 .reqcard{display:none}.assignment1 h2{font-size:1.45rem}.assignment1 .ticket{padding:8px;margin-bottom:1vh}.assignment1 .trow>b,.assignment1 .trow>span{font-size:.68rem}.assignment1 .seg{font-size:.58rem;line-height:1.2;padding:.4em .5em}.assignment1 .tnote{font-size:.6rem}.assignment1 .chips{display:none}.assignment1 .ostep{font-size:.64rem;line-height:1.25;margin:.18em 0}.assignment1 .mini{font-size:.62rem;line-height:1.25}.assignment1 .read{font-size:.55rem;line-height:1.2}.assignment1 .sideimg{display:none}.sources .sideimg{display:none}}
 
 .chips.big span{font-size:clamp(.82rem,1.6vw,1.05rem);padding:.5em 1.05em}
 .chips.big{margin-top:1.4vh}
+.sourcechip{background:var(--panel2);border:1px solid #22315a;border-radius:999px;padding:.38em .9em;font-size:clamp(.68rem,1.35vw,.86rem);color:var(--ink);text-decoration:none}
+.sourcechip:hover{border-color:var(--yel);color:var(--yel)}
+.srclist a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:2px}
 
 .reqcard{background:var(--panel);border:1px solid #22315a;border-radius:18px;padding:clamp(16px,2.4vw,30px);text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5);align-self:center}
 .reqbig{font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:800;line-height:1.15}
@@ -191,7 +195,7 @@ a.urlbadge:hover{border-color:var(--yel)}
 <div class="progress" id="prog"></div>
 <a class="home" href="../index.html">&larr; All destinations</a>
 <button class="voBtn" id="voBtn" type="button" aria-label="Play narration for this slide">&#9654; Listen</button>
-<div class="counter" id="counter">1 / 11</div>
+<div class="counter" id="counter">1 / 18</div>
 <div class="deck" id="deck">
 <!-- 1 title -->
 <section class="slide active">
@@ -492,13 +496,13 @@ a.urlbadge:hover{border-color:var(--yel)}
 
 
 
-<section class="slide dense">
+<section class="slide dense assignment1">
   <div class="split">
     <div>
-      <div class="kicker">09 - Your turn - Assignment #1</div>
+      <div class="kicker">09 - Your turn - Assignment #1 Part 1</div>
       <h2>Run the same loop for your clip</h2>
       <div class="ticket">
-        <div class="trow"><b>Assignment #1</b><span>Due Tuesday, December 1, 23:30 - 30% of the grade</span></div>
+        <div class="trow"><b>Assignment #1 - Part 1</b><span>Due Tuesday, December 1, 23:30 - 30% of the grade</span></div>
         <div class="segbar">
           <div class="seg" style="--c:var(--blue)"><b>10%</b>Your Israeli company and roles</div>
           <div class="seg" style="--c:var(--green)"><b>10%</b>Diplomats' takeaways + thank-you ceremony</div>
@@ -523,10 +527,38 @@ a.urlbadge:hover{border-color:var(--yel)}
 </section>
 
 
+<section class="slide assignment2">
+  <div class="split">
+    <div>
+      <div class="kicker">09 - Your turn - Assignment #1 Part 2</div>
+      <h2>Pitch your company in 3-5 minutes</h2>
+      <p class="lede">Due in class Friday, December 4, 2026 at 08:30. Build the pitch with AI workflows and present it to your mentor.</p>
+      <div class="ticket">
+        <div class="trow"><b>Assignment #1 - Part 2</b><span>Fri, Dec 4, 2026, 08:30 - 20% of the grade</span></div>
+        <div class="segbar">
+          <div class="seg" style="--c:var(--blue)"><b>Company</b>Team names, photos, simulated roles</div>
+          <div class="seg" style="--c:var(--green)"><b>Product</b>Why this Israeli company + proposed good or service</div>
+          <div class="seg" style="--c:var(--yel)"><b>Culture tips</b>Business behavior for your target market</div>
+        </div>
+        <div class="tnote">Ground the tips in Tool #1, Tool #2, Prof. Hashi's lecture, and a CIA + GLOBE literature review. CIA's page says the Factbook has sunset, so use the 2025 archive for country data.</div>
+      </div>
+      <div class="chips" aria-label="Country research links"><a class="sourcechip" href="https://www.globeproject.com/" target="_blank" rel="noopener">GLOBE Project</a><a class="sourcechip" href="https://www.cia.gov/the-world-factbook/" target="_blank" rel="noopener">CIA World Factbook</a><a class="sourcechip" href="https://thefactbook.org/editions/2025" target="_blank" rel="noopener">CIA 2025 archive</a></div>
+      <div class="ostep"><span class="num">1</span><span><b>Build with AI</b> - use AI workflows for the presentation.</span></div>
+      <div class="ostep"><span class="num">2</span><span><b>Pitch the mentor</b> - 3-5 minutes, in class.</span></div>
+      <div class="ostep"><span class="num">3</span><span><b>Disclose and reference</b> - list AI use and sources in your notes.</span></div>
+    </div>
+    <div class="reqcard">
+      <div class="reqbig">3-5 minutes.<br><span style="color:var(--green)">Company + culture.</span></div>
+      <p class="mini" style="margin-top:1em">Bring the company, product and target-market tips into one mentor pitch.</p>
+    </div>
+  </div>
+</section>
 
 
 
-<section class="slide">
+
+
+<section class="slide sources">
   <div class="split">
     <div>
       <div class="kicker">Sources and method</div>
@@ -543,7 +575,7 @@ a.urlbadge:hover{border-color:var(--yel)}
         <p><b>[9]</b> Grok Bot walkthrough (Vlad Tansky's slides) - vltansky.com/slides/grokbot-multitan</p>
         <p><b>[10]</b> Remotion (official page) - remotion.dev</p>
         <p><b>[11]</b> HyperFrames (official page) - hyperframes.heygen.com</p>
-        <p>The course source bar: the expected bibliography for the culture work includes the CIA World Factbook, the GLOBE project, "Kiss, Bow, or Shake Hands" and "Bridge the Culture Gaps". When you prompt for culture content, demand named sources of that quality, then check them.</p>
+        <p>The course source bar: the expected bibliography for the culture work includes the <a href="https://www.cia.gov/the-world-factbook/" target="_blank" rel="noopener">CIA World Factbook</a> (sunset Feb 2026; use the <a href="https://thefactbook.org/editions/2025" target="_blank" rel="noopener">2025 archive</a> for country data), the <a href="https://www.globeproject.com/" target="_blank" rel="noopener">GLOBE project</a>, "Kiss, Bow, or Shake Hands" and "Bridge the Culture Gaps". When you prompt for culture content, demand named sources of that quality, then check them.</p>
         <p>Method: tool descriptions come from each tool's own official page; screenshots were taken on those pages on Nov 13, 2026. No pricing or version claims, because those change. Illustrations are AI-generated for this session. Course-arc, etiquette-drill and observation-framework updates are paraphrased from the course-intro reference, without reproduced slides or presenter names. This session was researched, written and built by AI agents steered by a human, and reviewed on real renders - the loop, applied to itself.</p>
       </div>
     </div>
@@ -612,7 +644,7 @@ a.urlbadge:hover{border-color:var(--yel)}
   })();
   var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
   var counter=document.getElementById('counter'), prog=document.getElementById('prog');
-  var CLIP_MAP=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+  var CLIP_MAP=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, null, 15, 16];
   var LOOP_DETAILS=[
     [
       ['Brief','The human writes the goal. One WhatsApp message defined the course, the four countries, the deliverables, the repo and the documentation requirement.'],
@@ -634,7 +666,7 @@ a.urlbadge:hover{border-color:var(--yel)}
     voStop();
     counter.textContent=(i+1)+' / '+slides.length;
     prog.style.width=((i)/(slides.length-1)*100)+'%';
-    voBtn.style.display='';
+    voBtn.style.display=(CLIP_MAP[i]===null?'none':'');
   }
   document.getElementById('next').onclick=function(){show(i+1)};
   document.getElementById('prev').onclick=function(){show(i-1)};
@@ -662,20 +694,20 @@ a.urlbadge:hover{border-color:var(--yel)}
   var voBtn=document.getElementById('voBtn'), auds=[].slice.call(document.querySelectorAll('audio.vo')), playing=false;
   function voStop(){ auds.forEach(function(a){ a.pause(); a.currentTime=0; }); playing=false;
     voBtn.classList.remove('playing'); voBtn.innerHTML='&#9654; Listen'; }
-  function voPlay(){var a=auds[i];if(!a)return;var p=a.play();if(p&&p.catch)p.catch(function(){voStop()});playing=true;voBtn.classList.add('playing');voBtn.innerHTML='&#10074;&#10074; Pause';}
+  function voPlay(){var clipIndex=CLIP_MAP[i];var a=auds[clipIndex];if(!a)return;var p=a.play();if(p&&p.catch)p.catch(function(){voStop()});playing=true;voBtn.classList.add('playing');voBtn.innerHTML='&#10074;&#10074; Pause';}
   var clipsP=null;
   function loadClips(){if(!clipsP){clipsP=Promise.all(["/RuniLectures/preview/audio/ai-tools-part00.json", "/RuniLectures/preview/audio/ai-tools-part01.json", "/RuniLectures/preview/audio/ai-tools-part02.json", "/RuniLectures/preview/audio/ai-tools-part03.json", "/RuniLectures/preview/audio/ai-tools-part04.json", "/RuniLectures/preview/audio/ai-tools-part05.json", "/RuniLectures/preview/audio/ai-tools-part06.json", "/RuniLectures/preview/audio/ai-tools-part07.json", "/RuniLectures/preview/audio/ai-tools-part08.json", "/RuniLectures/preview/audio/ai-tools-part09.json"].map(function(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})})).then(function(parts){return JSON.parse(parts.join('')).clips;});}return clipsP;}
   voBtn.onclick=function(){
-    if(playing){voStop();return;}voStop();var a=auds[i];if(!a)return;
+    if(playing){voStop();return;}voStop();var clipIndex=CLIP_MAP[i];var a=auds[clipIndex];if(!a)return;
     if(a.getAttribute('src')){voPlay();return;}
-    var selected=i;
+    var selected=clipIndex;
     voBtn.innerHTML='Loading&hellip;';
     loadClips().then(function(clips){
       var t=clips[selected];if(!t)throw new Error('no clip');
       var bin=atob(t.replace(/\s+/g,'')),bytes=new Uint8Array(bin.length);
       for(var k=0;k<bin.length;k++)bytes[k]=bin.charCodeAt(k);
       a.src=URL.createObjectURL(new Blob([bytes],{type:'audio/mpeg'}));
-      if(i===selected)voPlay();
+      if(CLIP_MAP[i]===selected)voPlay();
     }).catch(function(){voStop();voBtn.innerHTML='Audio unavailable';});
   };
   auds.forEach(function(a){ a.addEventListener('ended',voStop); });
@@ -694,5 +726,5 @@ a.urlbadge:hover{border-color:var(--yel)}
   },{passive:true});
 })();
 </script>
-<script>fetch('https://raw.githubusercontent.com/SoundGuyAI/RuniLectures/53594ceb435ac9329726db3c4e7607aa7776b7fe/ai-tools/index.html').then(function(r){return r.text()}).then(function(t){var doc=new DOMParser().parseFromString(t,'text/html'),a=[];doc.querySelectorAll('img[src^="data:image/"]').forEach(function(im){if(a.indexOf(im.src)<0)a.push(im.src)});document.querySelectorAll('img[data-kit-asset]').forEach(function(im){im.src=a[+im.dataset.kitAsset];});var pool=[].slice.call(document.querySelectorAll('img.illus[data-kit-asset]'));document.querySelectorAll('img.illus[data-illus]').forEach(function(im){var src=pool[+im.dataset.illus||0];if(src)im.src=src.src;});});</script></body>
+<script>fetch('https://raw.githubusercontent.com/SoundGuyAI/RuniLectures/53594ceb435ac9329726db3c4e7607aa7776b7fe/ai-tools/index.html').then(function(r){return r.text()}).then(function(t){var doc=new DOMParser().parseFromString(t,'text/html'),a=[];doc.querySelectorAll('img[src^="data:image/"]').forEach(function(im){if(a.indexOf(im.src)<0)a.push(im.src)});document.querySelectorAll('img[data-kit-asset]').forEach(function(im){im.src=a[+im.dataset.kitAsset];});var li=document.getElementById('loopimg');if(li)document.querySelectorAll('.loopreuse').forEach(function(e){e.src=li.src;});var pool=[].slice.call(document.querySelectorAll('img.illus[data-kit-asset]'));document.querySelectorAll('img.illus[data-illus]').forEach(function(im){var src=pool[+im.dataset.illus||0];if(src)im.src=src.src;});});</script></body>
 </html>
